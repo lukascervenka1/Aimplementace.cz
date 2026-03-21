@@ -1,0 +1,171 @@
+.hero-section {
+    padding: 160px 0 120px;
+    position: relative;
+    overflow: visible;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--caramel);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-italic {
+    font-style: italic;
+    background: linear-gradient(130deg, var(--caramel), var(--alice));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 480px;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Floating stat cards */
+.hero-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-card {
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: linear-gradient(155deg, rgba(217, 234, 250, 0.06), rgba(217, 234, 250, 0.015));
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-card:hover {
+    transform: translateX(8px);
+    border-color: rgba(246, 188, 124, 0.35);
+}
+
+.hero-card-number {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--caramel);
+    line-height: 1;
+    min-width: 80px;
+}
+
+.hero-card-label {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Orbs */
+.hero-gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-orb-1 {
+    width: 600px;
+    height: 600px;
+    background: rgba(246, 188, 124, 0.1);
+    top: -200px;
+    right: -150px;
+}
+
+.hero-orb-2 {
+    width: 700px;
+    height: 700px;
+    background: rgba(246, 188, 124, 0.06);
+    bottom: -350px;
+    left: -200px;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        max-width: 100%;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-section {
+        padding: 140px 0 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-card-number {
+        font-size: 1.6rem;
+        min-width: 60px;
+    }
+}

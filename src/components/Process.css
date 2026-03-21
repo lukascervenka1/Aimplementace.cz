@@ -1,0 +1,59 @@
+.process-section {
+    background: transparent;
+}
+
+.process-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 50px;
+}
+
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--caramel), rgba(217, 234, 250, 0.25));
+}
+
+.process-step {
+    position: relative;
+    margin-bottom: 3rem;
+    background: rgba(217, 234, 250, 0.04);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.2rem 1.2rem 1.6rem;
+}
+
+.process-step:last-child {
+    margin-bottom: 0;
+}
+
+.step-number {
+    position: absolute;
+    left: -50px;
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: var(--onyx);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    border: 4px solid var(--surface);
+    z-index: 2;
+}
+
+.step-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--alice);
+}
+
+.step-text {
+    color: var(--text-muted);
+}

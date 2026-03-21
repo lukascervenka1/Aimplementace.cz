@@ -1,0 +1,12 @@
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="600" rx="40" fill="#151611"/>
+  <circle cx="300" cy="220" r="110" fill="#D9EAFA" fill-opacity="0.22"/>
+  <path d="M120 520C120 418.38 202.38 336 304 336H296C397.62 336 480 418.38 480 520V560H120V520Z" fill="#F6BC7C" fill-opacity="0.78"/>
+  <circle cx="300" cy="220" r="86" fill="#F6BC7C"/>
+  <circle cx="272" cy="206" r="8" fill="#151611"/>
+  <circle cx="328" cy="206" r="8" fill="#151611"/>
+  <path d="M262 252C272 264 286 270 300 270C314 270 328 264 338 252" stroke="#151611" stroke-width="8" stroke-linecap="round"/>
+  <text x="300" y="82" text-anchor="middle" fill="#D9EAFA" font-family="Arial, sans-serif" font-size="28" letter-spacing="2">
+    AIMPLEMETANCE.CZ
+  </text>
+</svg>
