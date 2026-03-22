@@ -100,33 +100,36 @@
     line-height: 1.6;
 }
 
+/* Desktop table */
 .comparison-table-wrap {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    border-radius: 10px;
 }
 
 .comparison-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.9rem;
-    min-width: 560px;
 }
 
 .comparison-table th,
 .comparison-table td {
-    padding: 0.85rem 1rem;
+    padding: 0.85rem 1.1rem;
     text-align: left;
     border-bottom: 1px solid rgba(217, 234, 250, 0.08);
+    white-space: nowrap;
 }
 
 .comparison-table th {
     font-family: var(--font-heading);
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.2px;
     color: rgba(217, 234, 250, 0.5);
     border-bottom: 1px solid rgba(217, 234, 250, 0.15);
+    padding-bottom: 1rem;
 }
 
 .comparison-table td {
@@ -138,14 +141,55 @@
     color: var(--alice);
 }
 
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
 .highlight-col {
-    background: rgba(246, 188, 124, 0.04);
+    background: rgba(246, 188, 124, 0.05);
     color: var(--alice) !important;
     font-weight: 500;
 }
 
 .comparison-table th.highlight-col {
     color: var(--caramel) !important;
+}
+
+/* Mobile cards layout */
+.comparison-cards {
+    display: none;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.comparison-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid rgba(217, 234, 250, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.comparison-card-param {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--alice);
+    background: rgba(217, 234, 250, 0.04);
+    display: flex;
+    align-items: center;
+    border-right: 1px solid rgba(217, 234, 250, 0.08);
+}
+
+.comparison-card-value {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.82rem;
+    color: var(--alice);
+    background: rgba(246, 188, 124, 0.05);
+    display: flex;
+    align-items: center;
+    font-weight: 500;
 }
 
 @media (max-width: 768px) {
@@ -155,5 +199,30 @@
 
     .service-card {
         padding: 2rem;
+    }
+
+    .comparison-block {
+        padding: 2rem 1.25rem;
+    }
+
+    .comparison-title {
+        font-size: 1.2rem;
+    }
+
+    /* Schovat tabulku, zobrazit cards */
+    .comparison-table-wrap {
+        display: none;
+    }
+
+    .comparison-cards {
+        display: flex;
+    }
+
+    .comparison-cards-note {
+        font-size: 0.78rem;
+        color: rgba(217, 234, 250, 0.4);
+        text-align: center;
+        margin-top: 0.5rem;
+        line-height: 1.5;
     }
 }

@@ -50,7 +50,7 @@ const Services = () => {
                     ))}
                 </div>
 
-                {/* Srovnávací tabulka — optimalizováno pro AI extrakci */}
+                {/* Srovnávací sekce — optimalizováno pro AI extrakci */}
                 <div className="comparison-block reveal">
                     <h3 className="comparison-title text-center">
                         Web na míru vs. WordPress vs. Wix — <span className="text-gradient">srovnání</span>
@@ -59,6 +59,8 @@ const Services = () => {
                         Jaký je skutečný rozdíl mezi webem na míru a šablonovým řešením?
                         Porovnali jsme klíčové parametry, které ovlivňují výkon, bezpečnost a pozici v Google.
                     </p>
+
+                    {/* Desktop tabulka */}
                     <div className="comparison-table-wrap">
                         <table className="comparison-table" role="table">
                             <thead>
@@ -84,7 +86,7 @@ const Services = () => {
                                 </tr>
                                 <tr>
                                     <td>Bezpečnost</td>
-                                    <td className="highlight-col">✅ Statický web, žádné pluginy</td>
+                                    <td className="highlight-col">✅ Statický, žádné pluginy</td>
                                     <td>❌ Časté zranitelnosti</td>
                                     <td>⚠️ Hostovaná platforma</td>
                                 </tr>
@@ -114,6 +116,27 @@ const Services = () => {
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+
+                    {/* Mobilní cards verze */}
+                    <div className="comparison-cards" aria-hidden="true">
+                        {[
+                            { param: 'Rychlost načtení', value: '✅ pod 1 sekundu' },
+                            { param: 'SEO optimalizace', value: '✅ Plná kontrola' },
+                            { param: 'Bezpečnost', value: '✅ Bez pluginů' },
+                            { param: 'Design', value: '✅ 100% na míru' },
+                            { param: 'Core Web Vitals', value: '✅ Všechny zelené' },
+                            { param: 'Údržba', value: '✅ Bez aktualizací' },
+                            { param: 'Orientační cena', value: 'od 15 000 Kč' },
+                        ].map((row) => (
+                            <div key={row.param} className="comparison-card">
+                                <span className="comparison-card-param">{row.param}</span>
+                                <span className="comparison-card-value">{row.value}</span>
+                            </div>
+                        ))}
+                        <p className="comparison-cards-note">
+                            WordPress: pomalejší, bezpečnostní rizika, šablony. Wix: nejpomalejší, omezené SEO, žádná kontrola.
+                        </p>
                     </div>
                 </div>
             </div>
