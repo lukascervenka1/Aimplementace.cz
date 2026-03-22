@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled glass' : ''} ${menuOpen ? 'menu-open' : ''}`}>
       <div className="container nav-container">
-        <a href="#hero" className="logo" aria-label="Aimplemetance.cz">
+        <a href="#hero" className="logo" aria-label="AImplementace.cz">
           <BrandMark />
         </a>
         <button
@@ -45,6 +45,7 @@ const Navbar = () => {
           <a href="#services" onClick={closeMenu}>Služby</a>
           <a href="#starter" onClick={closeMenu}>Rozjezd podnikání</a>
           <a href="#about" onClick={closeMenu}>O mně</a>
+          <a href="#faq" onClick={closeMenu}>FAQ</a>
           <a href="#contact" className="btn btn-primary btn-sm" onClick={closeMenu}>Nezávazná konzultace</a>
         </div>
       </div>

@@ -68,6 +68,33 @@
     flex-shrink: 0;
 }
 
+.about-links {
+    margin-top: 1.5rem;
+}
+
+.about-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--caramel);
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(246, 188, 124, 0.25);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.about-linkedin:hover {
+    background: rgba(246, 188, 124, 0.08);
+    border-color: rgba(246, 188, 124, 0.5);
+}
+
+.about-linkedin svg {
+    width: 18px;
+    height: 18px;
+}
+
 @media (max-width: 900px) {
     .about-wrapper {
         grid-template-columns: 1fr;

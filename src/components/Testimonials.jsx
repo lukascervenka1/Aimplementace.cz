@@ -13,26 +13,30 @@ const testimonials = [
 
 const Testimonials = () => {
     return (
-        <section className="section testimonials-section">
+        <section id="testimonials" className="section testimonials-section" aria-label="Reference klientů">
             <div className="container">
-                <div className="section-header text-center reveal">
+                <header className="section-header text-center reveal">
                     <h2 className="section-title">Co o nás <span className="text-gradient">říkají</span></h2>
-                </div>
+                    <p className="section-subtitle">
+                        Reálné reference od klientů, kteří s námi spolupracovali na tvorbě webu a automatizacích.
+                    </p>
+                </header>
                 <div className="testimonials-grid">
                     {testimonials.map((t, i) => (
-                        <blockquote key={i} className="testimonial-card glass reveal">
-                            <div className="testimonial-stars" aria-label="5 z 5 hvězd">
+                        <blockquote key={i} className="testimonial-card glass reveal" itemScope itemType="https://schema.org/Review">
+                            <div className="testimonial-stars" aria-label="Hodnocení 5 z 5 hvězd">
                                 {'★★★★★'}
                             </div>
-                            <p className="testimonial-quote">&ldquo;{t.quote}&rdquo;</p>
+                            <p className="testimonial-quote" itemProp="reviewBody">&ldquo;{t.quote}&rdquo;</p>
                             <footer className="testimonial-footer">
-                                <div className="testimonial-author-info">
-                                    <cite className="testimonial-author">{t.author}</cite>
+                                <div className="testimonial-author-info" itemProp="author" itemScope itemType="https://schema.org/Organization">
+                                    <cite className="testimonial-author" itemProp="name">{t.author}</cite>
                                     <a
                                         href={t.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="testimonial-role"
+                                        itemProp="url"
                                     >
                                         {t.role} ↗
                                     </a>

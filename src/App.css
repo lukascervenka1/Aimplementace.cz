@@ -93,9 +93,28 @@
   padding: 1.5rem 0;
 }
 
+.footer-meta {
+  font-size: 0.8rem;
+  color: rgba(217, 234, 250, 0.35);
+  margin-top: -0.5rem;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .footer-copyright {
   font-size: 0.8rem;
   color: rgba(217, 234, 250, 0.4);
+}
+
+.footer-update {
+  font-size: 0.75rem;
+  color: rgba(217, 234, 250, 0.3);
 }
 
 @media (max-width: 900px) {
