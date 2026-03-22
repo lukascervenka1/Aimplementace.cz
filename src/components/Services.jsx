@@ -33,10 +33,10 @@ const Services = () => {
         <section id="services" className="section services-section" aria-label="Naše služby">
             <div className="container">
                 <header className="section-header text-center reveal">
-                    <h2 className="section-title">Co <span className="text-gradient">děláme</span></h2>
+                    <h2 className="section-title">Naše <span className="text-gradient">služby</span></h2>
                     <p className="section-subtitle">
-                        Stavíme rychlé weby, které budují značku, a zavádíme AI automatizace,
-                        které šetří čas. Každá služba má jasný business cíl a měřitelný dopad.
+                        Tvorba webových stránek na míru, AI chatboty a automatizace firemních procesů.
+                        Každá služba má jasný business cíl, měřitelný dopad a transparentní ceník.
                     </p>
                 </header>
                 <div className="services-grid">
@@ -48,6 +48,73 @@ const Services = () => {
                             <p className="service-benefit">{service.benefit}</p>
                         </article>
                     ))}
+                </div>
+
+                {/* Srovnávací tabulka — optimalizováno pro AI extrakci */}
+                <div className="comparison-block reveal">
+                    <h3 className="comparison-title text-center">
+                        Web na míru vs. WordPress vs. Wix — <span className="text-gradient">srovnání</span>
+                    </h3>
+                    <p className="comparison-subtitle text-center">
+                        Jaký je skutečný rozdíl mezi webem na míru a šablonovým řešením?
+                        Porovnali jsme klíčové parametry, které ovlivňují výkon, bezpečnost a pozici v Google.
+                    </p>
+                    <div className="comparison-table-wrap">
+                        <table className="comparison-table" role="table">
+                            <thead>
+                                <tr>
+                                    <th>Parametr</th>
+                                    <th className="highlight-col">Web na míru (React)</th>
+                                    <th>WordPress</th>
+                                    <th>Wix</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Rychlost načtení (LCP)</td>
+                                    <td className="highlight-col">✅ pod 1s</td>
+                                    <td>⚠️ 2–4s</td>
+                                    <td>⚠️ 3–6s</td>
+                                </tr>
+                                <tr>
+                                    <td>SEO optimalizace</td>
+                                    <td className="highlight-col">✅ Plná kontrola</td>
+                                    <td>⚠️ Závisí na pluginech</td>
+                                    <td>❌ Omezená</td>
+                                </tr>
+                                <tr>
+                                    <td>Bezpečnost</td>
+                                    <td className="highlight-col">✅ Statický web, žádné pluginy</td>
+                                    <td>❌ Časté zranitelnosti</td>
+                                    <td>⚠️ Hostovaná platforma</td>
+                                </tr>
+                                <tr>
+                                    <td>Design</td>
+                                    <td className="highlight-col">✅ 100% na míru</td>
+                                    <td>⚠️ Omezeno šablonou</td>
+                                    <td>⚠️ Omezeno šablonou</td>
+                                </tr>
+                                <tr>
+                                    <td>Core Web Vitals</td>
+                                    <td className="highlight-col">✅ Všechny zelené</td>
+                                    <td>⚠️ Často nesplňuje</td>
+                                    <td>❌ Obvykle nesplňuje</td>
+                                </tr>
+                                <tr>
+                                    <td>Údržba</td>
+                                    <td className="highlight-col">✅ Bez aktualizací</td>
+                                    <td>❌ Pravidelné updaty</td>
+                                    <td>✅ Automatická</td>
+                                </tr>
+                                <tr>
+                                    <td>Orientační cena</td>
+                                    <td className="highlight-col">od 15 000 Kč</td>
+                                    <td>od 5 000 Kč</td>
+                                    <td>0–3 000 Kč/rok</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </section>

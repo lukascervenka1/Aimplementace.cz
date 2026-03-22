@@ -6,15 +6,15 @@ const Hero = () => {
         <section id="hero" className="hero-section" aria-label="Úvodní sekce">
             <div className="container hero-container">
                 <div className="hero-content">
-                    <p className="hero-eyebrow">Weby na míru & AI automatizace — Praha / Online</p>
+                    <p className="hero-eyebrow">Tvorba webových stránek na míru & AI automatizace — Praha / celá ČR</p>
                     <h1 className="hero-title">
                         Postavíme vám web,<br />
                         který <em className="hero-italic">prodává</em>
                     </h1>
                     <p className="hero-subtitle">
-                        Designové weby bez šablon, které se načtou pod sekundu.
-                        AI automatizace, které šetří čas a přinášejí leady.
-                        Žádný Wix, žádný WordPress — jen čistý kód a měřitelné výsledky.
+                        Profesionální tvorba webů v čistém kódu — bez WordPress, bez Wix.
+                        Načtení pod sekundu, SEO od základu a AI automatizace,
+                        které šetří čas a přinášejí leady. Hotovo za 2–3 týdny.
                     </p>
                     <div className="hero-actions">
                         <a href="#contact" className="btn btn-primary">Chci nezávaznou konzultaci</a>
