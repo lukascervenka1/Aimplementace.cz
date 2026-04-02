@@ -3,36 +3,40 @@ import './FAQ.css';
 
 const faqData = [
     {
-        question: 'Kolik stojí web na míru?',
-        answer: 'Cena webu na míru začíná od 15 000 Kč a závisí na rozsahu projektu. Nabízíme dva modely spolupráce — pevná cena (rozsah i cena dohodnuty předem, bez překvapení) nebo hodinová sazba (platíte jen skutečně odpracovaný čas). Kompletní balíček Rozjezd podnikání s doménou, e-mailem a automatizací začíná od 25 000 Kč. První konzultace je vždy zdarma — probereme váš projekt a připravíme nabídku na míru.',
+        question: 'Kolik stojí tvorba webových stránek na míru?',
+        answer: 'Tvorba webu na míru v ČR stojí průměrně 35–40 000 Kč. U nás začínáme od 15 000 Kč — díky efektivnímu procesu a moderním nástrojům. Nabízíme pevnou cenu (rozsah i částka dohodnuty předem) nebo hodinovou sazbu. Balíček Rozjezd podnikání s doménou, e-mailem a automatizací začíná od 25 000 Kč. První konzultace je zdarma.',
     },
     {
         question: 'Jak dlouho trvá tvorba webu?',
-        answer: 'Web na míru je hotový za 2–3 týdny od schválení návrhu. Během realizace průběžně ukazujeme výsledky a vy schvalujete každý krok. U jednodušších projektů (landing page, vizitka) to může být i rychlejší. Kompletní balíček Rozjezd podnikání zvládáme za stejný časový rámec — od domény přes e-mail až po spuštěný web s automatizací.',
+        answer: 'Web na míru je hotový za 2–3 týdny od schválení návrhu. Průběžně ukazujeme výsledky a vy schvalujete každý krok. U jednodušších projektů (landing page, vizitka) to může být i 7–10 dní. Balíček Rozjezd podnikání — od domény přes e-mail až po spuštěný web s automatizací — zvládáme za stejný časový rámec.',
     },
     {
         question: 'Proč nepoužíváte WordPress nebo Wix?',
-        answer: 'Stavíme weby v čistém kódu (React), protože jsou výrazně rychlejší, bezpečnější a lépe optimalizovatelné pro SEO. Web v čistém kódu dosahuje lepších Core Web Vitals — tedy lepší pozice v Google a vyšší konverze. WordPress trpí pomalým načítáním kvůli desítkám pluginů, bezpečnostními riziky a omezeným designem šablon. Náš přístup znamená: načtení pod 1 sekundu, žádné bezpečnostní díry z pluginů a design přesně podle vašich představ.',
+        answer: 'Stavíme weby v čistém kódu (React), protože dosahují LCP pod 1 sekundu, mají lepší Core Web Vitals a jsou bezpečnější (žádné pluginy = žádné zranitelnosti). WordPress trpí průměrným LCP 2–4 sekundy kvůli pluginům, Wix je ještě pomalejší. Navíc weby v čistém kódu lépe podporují strukturovaná data Schema.org, která jsou klíčová pro viditelnost v AI vyhledávačích.',
+    },
+    {
+        question: 'Co je GEO a proč ho váš web potřebuje?',
+        answer: 'GEO (Generative Engine Optimization) je optimalizace webu tak, aby ho citovaly AI modely — ChatGPT, Perplexity, Google AI Overviews nebo Claude. V roce 2026 přes 60 % vyhledávání na Googlu zobrazí AI odpověď ještě před klasickými výsledky. Každý web, který stavíme, obsahuje strukturovaná data Schema.org, FAQ bloky a přesné datové body — to jsou faktory, které AI cituje nejčastěji.',
+    },
+    {
+        question: 'Jsou vaše weby viditelné v AI vyhledávačích (ChatGPT, Perplexity)?',
+        answer: 'Ano. Každý web implementujeme se strukturovanými daty Schema.org (Organization, Service, FAQ, Review), správnými meta tagy a robots.txt, který explicitně povoluje AI crawlery (GPTBot, ClaudeBot, PerplexityBot, Google-Extended). ChatGPT čerpá 87 % citací z top výsledků Bingu — proto zajišťujeme indexaci i tam. Perplexity preferuje čerstvý obsah s přesnými čísly, což do textů zapracováváme.',
     },
     {
         question: 'Co je AI chatbot a jak pomůže mému podnikání?',
-        answer: 'AI chatbot je automatický asistent na vašem webu, který komunikuje s návštěvníky 24/7. Kvalifikuje potenciální zákazníky, sbírá kontaktní údaje, odpovídá na časté dotazy a předává leady přímo do CRM. Reálný dopad: méně zmeškaných poptávek, rychlejší odezva zákazníkům a úspora času vašeho týmu. Ukázku chatbota vidíte přímo na tomto webu — vpravo dole.',
+        answer: 'AI chatbot je automatický asistent na webu, který komunikuje s návštěvníky 24/7. Kvalifikuje zákazníky, sbírá kontakty a předává leady do CRM — bez účasti vašeho týmu. Firmy s chatbotem zachytí průměrně 3× více leadů mimo pracovní dobu. Chatbot splňuje požadavky AI Actu 2026 — jasně se představuje jako asistent. Ukázku vidíte na tomto webu vpravo dole.',
     },
     {
-        question: 'Jaké automatizace nabízíte?',
-        answer: 'Automatizujeme propojení mezi CRM, tabulkami, e-maily a interními systémy. Typické scénáře: automatické notifikace při nové poptávce, přepis dat z formulářů do CRM, generování reportů, propojení nástrojů jako Make.com, Zapier nebo n8n. Z praxe — u jednoho klienta jsme automatizací e-mailových odpovědí ušetřili 8 hodin týdně manuální práce.',
+        question: 'Jaké automatizace nabízíte a jaké nástroje používáte?',
+        answer: 'Automatizujeme propojení CRM, tabulek, e-mailů a interních systémů. Pracujeme s Make.com, n8n a Zapier. Typické výsledky: ušetření 6–10 hodin týdně při zpracování poptávek, automatické notifikace, přepis dat z formulářů do CRM a generování reportů. Podle ČSÚ plánuje 9 z 10 českých firem investovat do AI automatizace v roce 2026.',
     },
     {
         question: 'Jak probíhá spolupráce?',
-        answer: 'Spolupráce má 5 kroků: (1) Nezávazná konzultace zdarma — probereme vaše potřeby. (2) Návrh řešení — připravíme nabídku na míru s jasnou cenou a termínem. (3) Realizace — průběžně ukazujeme výsledky, vy schvalujete. (4) Předání + zaškolení — vše předáme, vysvětlíme a dodáme návod. (5) Podpora — i po spuštění jsme tu pro vás. Komunikujete přímo s Lukášem, žádný tým 50 lidí.',
-    },
-    {
-        question: 'Děláte i SEO optimalizaci?',
-        answer: 'Ano, SEO je součástí každého webu, který stavíme. Zajišťujeme technické SEO (rychlost načítání, čistý kód, správné meta tagy, strukturovaná data), responzivní design (Google upřednostňuje mobile-first indexing) a napojení na Google Analytics a Search Console. Díky čistému kódu bez WordPress pluginů dosahujeme výrazně lepšího skóre Core Web Vitals než šablonové weby.',
+        answer: 'Spolupráce má 5 kroků: (1) Nezávazná konzultace zdarma — probereme vaše potřeby. (2) Návrh na míru — přesná cena a termín. (3) Realizace — průběžně ukazujeme výsledky, vy schvalujete. (4) Předání + zaškolení — kompletní dokumentace a návod. (5) Podpora po spuštění. Komunikujete přímo s Lukášem — žádný tým prostředníků.',
     },
     {
         question: 'Mohu si vybrat model platby?',
-        answer: 'Ano, nabízíme dva modely spolupráce. Pevná cena (fix price) — dohodneme rozsah a cenu předem, víte přesně, kolik zaplatíte, žádná překvapení. Hodinová sazba (time & material) — flexibilní model, platíte jen skutečně odpracovaný čas, ideální pro projekty s měnícím se rozsahem. Na konzultaci vám poradíme, který model je pro váš projekt výhodnější.',
+        answer: 'Ano, nabízíme dva modely. Pevná cena (fix price) — dohodneme rozsah a cenu předem, víte přesně, kolik zaplatíte, žádná překvapení. Hodinová sazba (time & material) — flexibilní model, platíte jen skutečně odpracovaný čas, ideální pro projekty s měnícím se rozsahem. Na konzultaci vám poradíme, který model je pro váš projekt výhodnější.',
     },
 ];
 
@@ -49,7 +53,7 @@ const FAQ = () => {
                 <div className="section-header text-center reveal">
                     <h2 className="section-title">Časté <span className="text-gradient">dotazy</span></h2>
                     <p className="section-subtitle">
-                        Odpovědi na nejčastější otázky ohledně tvorby webů, AI automatizací a spolupráce.
+                        Odpovědi na nejčastější otázky o tvorbě webů, AI automatizacích, cenách a spolupráci.
                         Nenašli jste odpověď? Napište nám — první konzultace je zdarma.
                     </p>
                 </div>
@@ -74,7 +78,6 @@ const FAQ = () => {
                                 id={`faq-answer-${index}`}
                                 className="faq-answer"
                                 role="region"
-                                aria-labelledby={`faq-question-${index}`}
                             >
                                 <p>{faq.answer}</p>
                             </div>

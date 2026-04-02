@@ -19,20 +19,20 @@ const About = () => {
                     <div className="about-content">
                         <h2 className="section-title">O <span className="text-gradient">mně</span></h2>
                         <p className="about-lead">
-                            Jmenuji se <strong>Lukáš Červenka</strong> a pomáhám firmám růst prostřednictvím
-                            rychlých webů na míru a AI automatizací. Specializuji se na čistý kód v Reactu,
-                            SEO optimalizaci a integraci AI nástrojů do firemních procesů.
+                            Jmenuji se <strong>Lukáš Červenka</strong> a stavím weby, které vidí Google
+                            i AI — a automatizace, které firmám šetří reálný čas. Pracuji v Reactu,
+                            Make.com, n8n a Zapier. Každý projekt předám s měřitelnými výsledky, ne jen s hezkou prezentací.
                         </p>
                         <p className="about-text">
-                            Jsem nový na trhu a aktivně nabírám klienty. To pro vás znamená plnou pozornost,
-                            osobní přístup a ceny, které vás příjemně překvapí. Každý projekt beru jako referenci,
-                            na které záleží. Komunikujete přímo se mnou — žádný tým prostředníků.
+                            Aktivně nabírám první klienty — to pro vás znamená plnou pozornost, přímou komunikaci
+                            a ceny výrazně pod tržním průměrem (průměrný web v ČR stojí 35–40 000 Kč, u mě začínáme od 15 000 Kč).
+                            Každý projekt beru jako referenci, na které záleží.
                         </p>
                         <div className="about-points" role="list">
-                            <span role="listitem">Weby v čistém kódu — React, rychlost, SEO od základu</span>
-                            <span role="listitem">AI automatizace s měřitelným dopadem na byznys</span>
-                            <span role="listitem">Osobní přístup, férové ceny, transparentní komunikace</span>
-                            <span role="listitem">Důraz na bezpečnost dat a ochrana NDA</span>
+                            <span role="listitem">Weby v Reactu — LCP pod 1s, SEO + GEO strukturovaná data</span>
+                            <span role="listitem">Automatizace: Make.com, n8n, Zapier — ušetření 6–10 h/týden</span>
+                            <span role="listitem">AI chatboty v souladu s AI Actem 2026</span>
+                            <span role="listitem">Osobní přístup, transparentní ceny, NDA na vyžádání</span>
                         </div>
                         <div className="about-links">
                             <a

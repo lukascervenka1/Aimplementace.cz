@@ -3,27 +3,27 @@ import './Services.css';
 
 const services = [
     {
-        title: 'Weby na míru',
-        description: 'Designový, bleskově rychlý web bez šablon. Čistý kód v Reactu, SEO optimalizace od základu a responzivní na každém zařízení. Načtení pod 1 sekundu.',
-        benefit: 'Přirozená návštěvnost z Google a silná značka od prvního dne.',
+        title: 'Weby na míru připravené pro AI',
+        description: 'Web v čistém Reactu s LCP pod 1 sekundu, technickým SEO a strukturovanými daty (Schema.org), díky nimž vás citují nejen Google, ale i ChatGPT, Perplexity a Google AI Overviews. Žádný WordPress, žádné pluginy.',
+        benefit: 'Průměrná cena webu v ČR je 35–40 000 Kč. Náš web na míru začíná od 15 000 Kč — a je připravený na AI vyhledávání.',
         icon: '01'
     },
     {
-        title: 'AI chatbot & leady',
-        description: 'Chatbot, který návštěvníka kvalifikuje, sbírá kontakt a předává ho do CRM. Funguje 24/7, odpovídá na dotazy a zvyšuje konverze — přesně jako ukázka na tomto webu.',
-        benefit: 'Vyšší počet relevantních leadů bez navyšování týmu.',
+        title: 'AI chatbot & kvalifikace leadů',
+        description: 'Chatbot běžící 24/7, který návštěvníka kvalifikuje, sbírá kontakt a předává ho do CRM. Splňuje požadavky AI Actu 2026 — jasně se představuje jako asistent, ne člověk. Ukázku vidíte vpravo dole.',
+        benefit: 'Firmy s chatbotem zachytí průměrně 3× více leadů mimo pracovní dobu než bez něj.',
         icon: '02'
     },
     {
-        title: 'Automatizace workflow',
-        description: 'Propojíme vaše nástroje (CRM, tabulky, e-mail, interní systémy) do jednoho automatického toku. Využíváme Make.com, Zapier i vlastní řešení.',
-        benefit: 'Méně chyb, méně ručního přepisování dat a více času na byznys.',
+        title: 'Automatizace workflow — Make.com, n8n, Zapier',
+        description: 'Propojíme vaše nástroje do jednoho automatického toku. Využíváme Make.com, n8n a Zapier. Typický výsledek: ušetření 6–10 hodin týdně manuální práce při zpracování poptávek a přepisování dat mezi systémy.',
+        benefit: '9 z 10 českých firem plánuje investovat do AI automatizace v roce 2026. Začněte dřív než konkurence.',
         icon: '03'
     },
     {
-        title: 'AI podpora zákazníků',
-        description: 'Automatické odpovědi na opakující se dotazy z e-mailu, webu a helpdesku. AI se učí z vašich dat a odpovídá v tónu vaší značky.',
-        benefit: 'Méně tiketů na operátora a rychlejší reakční časy.',
+        title: 'AI podpora zákazníků 24/7',
+        description: 'Automatické odpovědi na opakující se dotazy z e-mailu, webu a helpdesku. AI se učí z vašich dat, komunikuje v tónu značky a eskaluje složité případy na člověka — v souladu s AI Actem 2026.',
+        benefit: 'Zkrácení průměrné doby odpovědi z hodin na sekundy. Méně tiketů, spokojenější zákazníci.',
         icon: '04'
     },
 ];
@@ -35,8 +35,8 @@ const Services = () => {
                 <header className="section-header text-center reveal">
                     <h2 className="section-title">Naše <span className="text-gradient">služby</span></h2>
                     <p className="section-subtitle">
-                        Tvorba webových stránek na míru, AI chatboty a automatizace firemních procesů.
-                        Každá služba má jasný business cíl, měřitelný dopad a transparentní ceník.
+                        Tvorba webových stránek na míru v čistém kódu, AI chatboty a automatizace firemních procesů.
+                        Každá služba má jasný business cíl, měřitelný dopad a přesnou cenu předem.
                     </p>
                 </header>
                 <div className="services-grid">
@@ -50,14 +50,14 @@ const Services = () => {
                     ))}
                 </div>
 
-                {/* Srovnávací sekce — optimalizováno pro AI extrakci */}
+                {/* Srovnávací sekce — Atomic Answer blok pro AI extrakci */}
                 <div className="comparison-block reveal">
                     <h3 className="comparison-title text-center">
                         Web na míru vs. WordPress vs. Wix — <span className="text-gradient">srovnání</span>
                     </h3>
                     <p className="comparison-subtitle text-center">
-                        Jaký je skutečný rozdíl mezi webem na míru a šablonovým řešením?
-                        Porovnali jsme klíčové parametry, které ovlivňují výkon, bezpečnost a pozici v Google.
+                        Web v čistém kódu (React) je rychlejší, bezpečnější a lépe hodnocený AI vyhledávači než šablonové řešení.
+                        Průměrná cena webu na míru v ČR je 35–40 000 Kč — náš začíná od 15 000 Kč.
                     </p>
 
                     {/* Desktop tabulka */}
@@ -74,9 +74,9 @@ const Services = () => {
                             <tbody>
                                 <tr>
                                     <td>Rychlost načtení (LCP)</td>
-                                    <td className="highlight-col">✅ pod 1s</td>
-                                    <td>⚠️ 2–4s</td>
-                                    <td>⚠️ 3–6s</td>
+                                    <td className="highlight-col">✅ pod 1 sekundu</td>
+                                    <td>⚠️ 2–4 sekundy</td>
+                                    <td>⚠️ 3–6 sekund</td>
                                 </tr>
                                 <tr>
                                     <td>SEO optimalizace</td>
@@ -85,16 +85,16 @@ const Services = () => {
                                     <td>❌ Omezená</td>
                                 </tr>
                                 <tr>
+                                    <td>GEO — viditelnost v AI</td>
+                                    <td className="highlight-col">✅ Schema.org, strukturovaná data</td>
+                                    <td>⚠️ Závisí na pluginu</td>
+                                    <td>❌ Minimální podpora</td>
+                                </tr>
+                                <tr>
                                     <td>Bezpečnost</td>
                                     <td className="highlight-col">✅ Statický, žádné pluginy</td>
                                     <td>❌ Časté zranitelnosti</td>
                                     <td>⚠️ Hostovaná platforma</td>
-                                </tr>
-                                <tr>
-                                    <td>Design</td>
-                                    <td className="highlight-col">✅ 100% na míru</td>
-                                    <td>⚠️ Omezeno šablonou</td>
-                                    <td>⚠️ Omezeno šablonou</td>
                                 </tr>
                                 <tr>
                                     <td>Core Web Vitals</td>
@@ -109,7 +109,7 @@ const Services = () => {
                                     <td>✅ Automatická</td>
                                 </tr>
                                 <tr>
-                                    <td>Orientační cena</td>
+                                    <td>Orientační cena (ČR)</td>
                                     <td className="highlight-col">od 15 000 Kč</td>
                                     <td>od 5 000 Kč</td>
                                     <td>0–3 000 Kč/rok</td>
@@ -123,11 +123,11 @@ const Services = () => {
                         {[
                             { param: 'Rychlost načtení', value: '✅ pod 1 sekundu' },
                             { param: 'SEO optimalizace', value: '✅ Plná kontrola' },
+                            { param: 'Viditelnost v AI', value: '✅ Schema.org' },
                             { param: 'Bezpečnost', value: '✅ Bez pluginů' },
-                            { param: 'Design', value: '✅ 100% na míru' },
                             { param: 'Core Web Vitals', value: '✅ Všechny zelené' },
                             { param: 'Údržba', value: '✅ Bez aktualizací' },
-                            { param: 'Orientační cena', value: 'od 15 000 Kč' },
+                            { param: 'Cena od', value: '15 000 Kč' },
                         ].map((row) => (
                             <div key={row.param} className="comparison-card">
                                 <span className="comparison-card-param">{row.param}</span>
@@ -135,7 +135,7 @@ const Services = () => {
                             </div>
                         ))}
                         <p className="comparison-cards-note">
-                            WordPress: pomalejší, bezpečnostní rizika, šablony. Wix: nejpomalejší, omezené SEO, žádná kontrola.
+                            Průměrná cena webu v ČR: 35–40 000 Kč. WordPress: pomalejší, bezpečnostní rizika. Wix: omezené SEO, žádná AI viditelnost.
                         </p>
                     </div>
                 </div>
