@@ -17,7 +17,7 @@ export default async function handler(req, res) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                from: 'Web formulář <onboarding@resend.dev>',
+                from: 'Web formulář <info@aimplementace.cz>',
                 to: ['info@aimplementace.cz'],
                 reply_to: email,
                 subject: `Poptávka — ${company || name}`,
