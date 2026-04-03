@@ -17,6 +17,8 @@
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .service-card::before {
@@ -67,14 +69,17 @@
     font-size: 0.95rem;
     margin-bottom: 1rem;
     line-height: 1.65;
+    flex: 1;
 }
 
 .service-benefit {
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.88rem;
+    font-weight: 500;
     color: var(--caramel);
     padding-top: 0.75rem;
     border-top: 1px solid var(--border);
+    line-height: 1.5;
+    margin-top: auto;
 }
 
 /* Comparison table */

@@ -4,26 +4,26 @@ import './Services.css';
 const services = [
     {
         title: 'Weby na míru připravené pro AI',
-        description: 'Web v čistém Reactu s LCP pod 1 sekundu, technickým SEO a strukturovanými daty (Schema.org), díky nimž vás citují nejen Google, ale i ChatGPT, Perplexity a Google AI Overviews. Žádný WordPress, žádné pluginy.',
-        benefit: 'Průměrná cena webu v ČR je 35–40 000 Kč. Náš web na míru začíná od 15 000 Kč — a je připravený na AI vyhledávání.',
+        description: 'Web v čistém Reactu — LCP pod 1 sekundu, SEO od základu a Schema.org strukturovaná data, díky nimž vás citují nejen Google, ale i ChatGPT a Perplexity. Žádný WordPress, žádné pluginy.',
+        benefit: 'Průměr v ČR: 35–40 000 Kč. U nás od 15 000 Kč — připraveno pro AI vyhledávání.',
         icon: '01'
     },
     {
         title: 'AI chatbot & kvalifikace leadů',
-        description: 'Chatbot běžící 24/7, který návštěvníka kvalifikuje, sbírá kontakt a předává ho do CRM. Splňuje požadavky AI Actu 2026 — jasně se představuje jako asistent, ne člověk. Ukázku vidíte vpravo dole.',
-        benefit: 'Firmy s chatbotem zachytí průměrně 3× více leadů mimo pracovní dobu než bez něj.',
+        description: 'Chatbot na míru, který kvalifikuje návštěvníky, sbírá kontakty a předává leady do CRM — 24/7 bez zásahu týmu. Splňuje AI Act 2026. Živou ukázku vidíte vpravo dole.',
+        benefit: 'Firmy s chatbotem zachytí průměrně 3× více leadů mimo pracovní dobu.',
         icon: '02'
     },
     {
-        title: 'Automatizace workflow — Make.com, n8n, Zapier',
-        description: 'Propojíme vaše nástroje do jednoho automatického toku. Využíváme Make.com, n8n a Zapier. Typický výsledek: ušetření 6–10 hodin týdně manuální práce při zpracování poptávek a přepisování dat mezi systémy.',
-        benefit: '9 z 10 českých firem plánuje investovat do AI automatizace v roce 2026. Začněte dřív než konkurence.',
+        title: 'Automatizace workflow',
+        description: 'Propojíme vaše nástroje — CRM, tabulky, e-mail, interní systémy — do jednoho automatického toku. Pracujeme s Make.com, n8n a Zapier. Typický výsledek: ušetření 6–10 hodin týdně.',
+        benefit: '9 z 10 českých firem plánuje investovat do AI automatizace v roce 2026.',
         icon: '03'
     },
     {
         title: 'AI podpora zákazníků 24/7',
-        description: 'Automatické odpovědi na opakující se dotazy z e-mailu, webu a helpdesku. AI se učí z vašich dat, komunikuje v tónu značky a eskaluje složité případy na člověka — v souladu s AI Actem 2026.',
-        benefit: 'Zkrácení průměrné doby odpovědi z hodin na sekundy. Méně tiketů, spokojenější zákazníci.',
+        description: 'Automatické odpovědi na opakující se dotazy z e-mailu, webu i helpdesku. AI komunikuje v tónu vaší značky a složité případy eskaluje na člověka — v souladu s AI Actem 2026.',
+        benefit: 'Zkrácení doby odpovědi z hodin na sekundy. Méně tiketů, spokojenější zákazníci.',
         icon: '04'
     },
 ];
