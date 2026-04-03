@@ -8,27 +8,33 @@ const Contact = () => {
         company: '',
         message: ''
     });
+    const [status, setStatus] = useState('idle'); // idle | loading | success | error
 
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        const subject = encodeURIComponent(`Poptávka — ${formData.company || formData.name}`);
-        const body = encodeURIComponent(
-            [
-                `Jméno: ${formData.name}`,
-                `Email: ${formData.email}`,
-                `Firma / Projekt: ${formData.company}`,
-                '',
-                'Zpráva:',
-                formData.message
-            ].join('\n')
-        );
+        setStatus('loading');
 
-        window.location.href = `mailto:info@aimplementace.cz?subject=${subject}&body=${body}`;
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            if (res.ok) {
+                setStatus('success');
+                setFormData({ name: '', email: '', company: '', message: '' });
+            } else {
+                setStatus('error');
+            }
+        } catch {
+            setStatus('error');
+        }
     };
 
     return (
@@ -54,29 +60,62 @@ const Contact = () => {
                             </div>
                         </div>
                     </div>
-                    <form className="contact-form" onSubmit={handleSubmit}>
-                        <label htmlFor="name">Jméno</label>
-                        <input id="name" name="name" type="text" required value={formData.name} onChange={handleChange} />
 
-                        <label htmlFor="email">E-mail</label>
-                        <input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} />
+                    {status === 'success' ? (
+                        <div className="contact-success">
+                            <div className="contact-success-icon">✓</div>
+                            <h3>Zpráva odeslána!</h3>
+                            <p>Ozvu se vám do 24 hodin. Mezitím se klidně podívejte na naše služby.</p>
+                            <button className="btn btn-outline" onClick={() => setStatus('idle')}>
+                                Odeslat další zprávu
+                            </button>
+                        </div>
+                    ) : (
+                        <form className="contact-form" onSubmit={handleSubmit} noValidate>
+                            <label htmlFor="name">Jméno</label>
+                            <input
+                                id="name" name="name" type="text" required
+                                value={formData.name} onChange={handleChange}
+                                disabled={status === 'loading'}
+                            />
 
-                        <label htmlFor="company">Firma / Projekt</label>
-                        <input id="company" name="company" type="text" value={formData.company} onChange={handleChange} />
+                            <label htmlFor="email">E-mail</label>
+                            <input
+                                id="email" name="email" type="email" required
+                                value={formData.email} onChange={handleChange}
+                                disabled={status === 'loading'}
+                            />
 
-                        <label htmlFor="message">Co potřebujete?</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="4"
-                            required
-                            value={formData.message}
-                            onChange={handleChange}
-                            placeholder="Např. potřebuji nový web pro svou firmu, chci automatizovat odpovídání na e-maily..."
-                        />
+                            <label htmlFor="company">Firma / Projekt</label>
+                            <input
+                                id="company" name="company" type="text"
+                                value={formData.company} onChange={handleChange}
+                                disabled={status === 'loading'}
+                            />
 
-                        <button type="submit" className="btn btn-primary btn-block">Odeslat poptávku</button>
-                    </form>
+                            <label htmlFor="message">Co potřebujete?</label>
+                            <textarea
+                                id="message" name="message" rows="4" required
+                                value={formData.message} onChange={handleChange}
+                                disabled={status === 'loading'}
+                                placeholder="Např. potřebuji nový web pro svou firmu, chci automatizovat odpovídání na e-maily..."
+                            />
+
+                            {status === 'error' && (
+                                <p className="contact-error">
+                                    Nepodařilo se odeslat zprávu. Zkuste to prosím znovu nebo napište přímo na info@aimplementace.cz
+                                </p>
+                            )}
+
+                            <button
+                                type="submit"
+                                className="btn btn-primary btn-block"
+                                disabled={status === 'loading'}
+                            >
+                                {status === 'loading' ? 'Odesílám…' : 'Odeslat poptávku'}
+                            </button>
+                        </form>
+                    )}
                 </div>
             </div>
         </section>
