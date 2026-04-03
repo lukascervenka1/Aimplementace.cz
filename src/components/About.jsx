@@ -47,6 +47,18 @@ const About = () => {
                                 </svg>
                                 <span>LinkedIn</span>
                             </a>
+                            <a
+                                href="https://www.autoskola.red"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="about-linkedin"
+                                aria-label="Reference: Autoškola RED"
+                            >
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18" aria-hidden="true">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                                <span>Reference: Autoškola RED</span>
+                            </a>
                         </div>
                     </div>
                 </div>
