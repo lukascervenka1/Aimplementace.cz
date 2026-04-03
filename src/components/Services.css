@@ -75,13 +75,22 @@
     line-height: 1.65;
 }
 
+.service-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0 0 0.85rem 0;
+    flex-shrink: 0;
+}
+
 .service-benefit {
     font-size: 0.88rem;
     font-weight: 500;
     color: var(--caramel);
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--border);
     line-height: 1.5;
+    height: 1.4rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 /* Comparison table */

@@ -5,25 +5,25 @@ const services = [
     {
         title: 'Weby na míru připravené pro AI',
         description: 'Web v čistém Reactu — LCP pod 1 sekundu, SEO od základu a Schema.org strukturovaná data, díky nimž vás citují nejen Google, ale i ChatGPT a Perplexity. Žádný WordPress, žádné pluginy.',
-        benefit: 'Průměr v ČR: 35–40 000 Kč. U nás od 15 000 Kč — připraveno pro AI vyhledávání.',
+        benefit: '→ Od 15 000 Kč. Průměr v ČR: 35–40 000 Kč.',
         icon: '01'
     },
     {
         title: 'AI chatbot & kvalifikace leadů',
         description: 'Chatbot na míru, který kvalifikuje návštěvníky, sbírá kontakty a předává leady do CRM — 24/7 bez zásahu týmu. Splňuje AI Act 2026. Živou ukázku vidíte vpravo dole.',
-        benefit: 'Firmy s chatbotem zachytí průměrně 3× více leadů mimo pracovní dobu.',
+        benefit: '→ 3× více leadů mimo pracovní dobu.',
         icon: '02'
     },
     {
         title: 'Automatizace workflow',
         description: 'Propojíme vaše nástroje — CRM, tabulky, e-mail, interní systémy — do jednoho automatického toku. Pracujeme s Make.com, n8n a Zapier. Typický výsledek: ušetření 6–10 hodin týdně.',
-        benefit: '9 z 10 českých firem plánuje investovat do AI automatizace v roce 2026.',
+        benefit: '→ 9 z 10 českých firem investuje do AI v roce 2026.',
         icon: '03'
     },
     {
         title: 'AI podpora zákazníků 24/7',
         description: 'Automatické odpovědi na opakující se dotazy z e-mailu, webu i helpdesku. AI komunikuje v tónu vaší značky a složité případy eskaluje na člověka — v souladu s AI Actem 2026.',
-        benefit: 'Zkrácení doby odpovědi z hodin na sekundy. Méně tiketů, spokojenější zákazníci.',
+        benefit: '→ Méně tiketů, rychlejší odpovědi, spokojenější zákazníci.',
         icon: '04'
     },
 ];
@@ -47,6 +47,7 @@ const Services = () => {
                                 <h3 className="service-title">{service.title}</h3>
                                 <p className="service-description">{service.description}</p>
                             </div>
+                            <hr className="service-divider" aria-hidden="true" />
                             <p className="service-benefit">{service.benefit}</p>
                         </article>
                     ))}
