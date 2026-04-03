@@ -28,7 +28,7 @@ const faqData = [
     },
     {
         question: 'Jaké automatizace nabízíte a jaké nástroje používáte?',
-        answer: 'Automatizujeme propojení CRM, tabulek, e-mailů a interních systémů. Pracujeme s Make.com, n8n a Zapier. Typické výsledky: ušetření 6–10 hodin týdně při zpracování poptávek, automatické notifikace, přepis dat z formulářů do CRM a generování reportů. Podle ČSÚ plánuje 9 z 10 českých firem investovat do AI automatizace v roce 2026.',
+        answer: 'Automatizujeme propojení CRM, tabulek, e-mailů a interních systémů pomocí Power Automate a automatického testování přes Playwright. Typické výsledky: ušetření 6–10 hodin týdně při zpracování poptávek, automatické notifikace, přepis dat z formulářů do CRM a generování reportů. Podle ČSÚ plánuje 9 z 10 českých firem investovat do AI automatizace v roce 2026.',
     },
     {
         question: 'Jak probíhá spolupráce?',

@@ -21,7 +21,7 @@ const About = () => {
                         <p className="about-lead">
                             Jmenuji se <strong>Lukáš Červenka</strong> a stavím weby, které vidí Google
                             i AI — a automatizace, které firmám šetří reálný čas. Pracuji v Reactu,
-                            Make.com, n8n a Zapier. Každý projekt předám s měřitelnými výsledky, ne jen s hezkou prezentací.
+                            Power Automate a Playwright. Každý projekt předám s měřitelnými výsledky, ne jen s hezkou prezentací.
                         </p>
                         <p className="about-text">
                             Aktivně nabírám první klienty — to pro vás znamená plnou pozornost, přímou komunikaci
@@ -30,7 +30,7 @@ const About = () => {
                         </p>
                         <div className="about-points" role="list">
                             <span role="listitem">Weby v Reactu — LCP pod 1s, SEO + GEO strukturovaná data</span>
-                            <span role="listitem">Automatizace: Make.com, n8n, Zapier — ušetření 6–10 h/týden</span>
+                            <span role="listitem">Automatizace: Power Automate, Playwright — ušetření 6–10 h/týden</span>
                             <span role="listitem">AI chatboty v souladu s AI Actem 2026</span>
                             <span role="listitem">Osobní přístup, transparentní ceny, NDA na vyžádání</span>
                         </div>

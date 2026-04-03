@@ -97,7 +97,7 @@ const matchResponse = (input) => {
     if (lower.match(/chatbot|chat bot|robot|lead|konverz|navstevnik|sbir.*kontakt/)) return RESPONSES.chatbot_info;
 
     // Automatizace
-    if (lower.match(/automat|workflow|propoj|crm|integrac|napoj|system|proces|zapier|make\.com|n8n/)) return RESPONSES.automatizace;
+    if (lower.match(/automat|workflow|propoj|crm|integrac|napoj|system|proces|power.automate|playwright|testov/)) return RESPONSES.automatizace;
 
     // Ceník / pricing
     if (lower.match(/cen[aiy]|cenik|stoj|kolik|drah|levn|slev|rozpoce|budget|financ|investic|plat[i]|uhrad/)) return RESPONSES.pricing;

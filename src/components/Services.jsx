@@ -16,7 +16,7 @@ const services = [
     },
     {
         title: 'Automatizace workflow',
-        description: 'Propojíme vaše nástroje — CRM, tabulky, e-mail, interní systémy — do jednoho automatického toku. Pracujeme s Make.com, n8n a Zapier. Typický výsledek: ušetření 6–10 hodin týdně.',
+        description: 'Propojíme vaše nástroje — CRM, tabulky, e-mail, interní systémy — do jednoho automatického toku. Pracujeme s Power Automate a automatickým testováním přes Playwright. Typický výsledek: ušetření 6–10 hodin týdně.',
         benefit: '→ 9 z 10 českých firem investuje do AI v roce 2026.',
         icon: '03'
     },
