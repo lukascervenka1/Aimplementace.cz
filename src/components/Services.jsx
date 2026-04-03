@@ -42,9 +42,11 @@ const Services = () => {
                 <div className="services-grid">
                     {services.map((service, index) => (
                         <article key={index} className={`service-card reveal reveal-delay-${index + 1}`}>
-                            <span className="service-number" aria-hidden="true">{service.icon}</span>
-                            <h3 className="service-title">{service.title}</h3>
-                            <p className="service-description">{service.description}</p>
+                            <div className="service-card-body">
+                                <span className="service-number" aria-hidden="true">{service.icon}</span>
+                                <h3 className="service-title">{service.title}</h3>
+                                <p className="service-description">{service.description}</p>
+                            </div>
                             <p className="service-benefit">{service.benefit}</p>
                         </article>
                     ))}
