@@ -4,8 +4,8 @@
 
 .about-wrapper {
     display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 2rem;
+    grid-template-columns: 260px 1fr;
+    gap: 3rem;
     align-items: center;
     padding: 2rem;
     border-radius: calc(var(--radius) * 1.2);
@@ -13,14 +13,15 @@
 
 .about-photo-wrap {
     width: 100%;
-    max-width: 320px;
+    max-width: 260px;
     margin: 0 auto;
 }
 
 .about-photo {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
+    object-position: top center;
     border-radius: 20px;
     border: 1px solid var(--border);
     background: rgba(217, 234, 250, 0.05);

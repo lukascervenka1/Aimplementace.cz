@@ -8,11 +8,11 @@ const About = () => {
                 <div className="about-wrapper reveal">
                     <div className="about-photo-wrap">
                         <img
-                            src="/founder-placeholder.svg"
+                            src="/luke.jpeg"
                             alt="Lukáš Červenka — zakladatel AImplementace.cz, webový vývojář a specialista na AI automatizace"
                             className="about-photo"
                             width="280"
-                            height="280"
+                            height="373"
                             loading="lazy"
                         />
                     </div>
