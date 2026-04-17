@@ -16,7 +16,7 @@ const projects = [
         type: 'project',
         name: 'Slavíme',
         tagline: 'iOS aplikace pro svátky a narozeniny',
-        description: 'Vlastní iOS aplikace publikovaná v App Store. Pomáhá si pamatovat svátky a narozeniny blízkých — s notifikacemi, kalendářem a přehledem na celý rok.',
+        description: 'Vlastní iOS aplikace publikovaná v App Store. Pomáhá si pamatovat svátky a narozeniny blízkých. Nabízí notifikace, kalendář a přehled na celý rok.',
         platform: 'App Store',
         tech: ['Swift', 'iOS', 'App Store'],
         url: 'https://apps.apple.com/cz/app/slav%C3%ADme/id6761773077?l=cs',
