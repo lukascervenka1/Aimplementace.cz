@@ -8,7 +8,7 @@ const cases = [
         title: 'Modelový scénář: AI asistent pro opakující se dotazy',
         setup: 'Typicky nasazujeme na FAQ, objednávky, reklamace a stav služby.',
         result: 'Cíl pilotu: zrychlit první odpověď a odlehčit operátorům od rutinních dotazů.',
-        timeline: 'Pilot: 3-4 týdny'
+        timeline: 'Pilot: 3–4 týdny'
     },
     {
         id: '02',
@@ -16,7 +16,7 @@ const cases = [
         title: 'Modelový scénář: kvalifikace leadů z webu',
         setup: 'Chatbot klade kvalifikační otázky a předává pouze relevantní poptávky.',
         result: 'Cíl pilotu: zvýšit počet kvalitních leadů a zkrátit čas obchodníka.',
-        timeline: 'Pilot: 2-3 týdny'
+        timeline: 'Pilot: 2–3 týdny'
     },
     {
         id: '03',
