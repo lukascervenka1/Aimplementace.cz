@@ -4,25 +4,25 @@ import './Services.css';
 const services = [
     {
         title: 'Weby na míru připravené pro AI',
-        description: 'Web v čistém Reactu — LCP pod 1 sekundu, SEO od základu a Schema.org strukturovaná data, díky nimž vás citují nejen Google, ale i ChatGPT a Perplexity. Žádný WordPress, žádné pluginy.',
+        description: 'Web v čistém Reactu: LCP pod 1 sekundu, SEO od základu a Schema.org strukturovaná data. Díky tomu vás kromě Googlu citují i ChatGPT a Perplexity. Žádný WordPress, žádné pluginy.',
         benefit: '→ Od 15 000 Kč. Průměr v ČR: 35–40 000 Kč.',
         icon: '01'
     },
     {
         title: 'AI chatbot & kvalifikace leadů',
-        description: 'Chatbot na míru, který kvalifikuje návštěvníky, sbírá kontakty a předává leady do CRM — 24/7 bez zásahu týmu. Splňuje AI Act 2026. Živou ukázku vidíte vpravo dole.',
+        description: 'Chatbot na míru, který kvalifikuje návštěvníky, sbírá kontakty a předává leady do CRM. Funguje 24/7 bez zásahu týmu a splňuje AI Act 2026. Živou ukázku vidíte vpravo dole.',
         benefit: '→ 3× více leadů mimo pracovní dobu.',
         icon: '02'
     },
     {
         title: 'Automatizace workflow',
-        description: 'Propojíme vaše nástroje — CRM, tabulky, e-mail, interní systémy — do jednoho automatického toku. Pracujeme s Power Automate a automatickým testováním přes Playwright. Typický výsledek: ušetření 6–10 hodin týdně.',
+        description: 'Propojíme vaše nástroje (CRM, tabulky, e-mail, interní systémy) do jednoho automatického toku. Pracujeme s Power Automate a automatickým testováním přes Playwright. Typický výsledek: ušetření 6–10 hodin týdně.',
         benefit: '→ 9 z 10 českých firem investuje do AI v roce 2026.',
         icon: '03'
     },
     {
         title: 'AI podpora zákazníků 24/7',
-        description: 'Automatické odpovědi na opakující se dotazy z e-mailu, webu i helpdesku. AI komunikuje v tónu vaší značky a složité případy eskaluje na člověka — v souladu s AI Actem 2026.',
+        description: 'Automatické odpovědi na opakující se dotazy z e-mailu, webu i helpdesku. AI komunikuje v tónu vaší značky, složité případy eskaluje na člověka a splňuje AI Act 2026.',
         benefit: '→ Méně tiketů, rychlejší odpovědi, spokojenější zákazníci.',
         icon: '04'
     },
@@ -56,11 +56,11 @@ const Services = () => {
                 {/* Srovnávací sekce — Atomic Answer blok pro AI extrakci */}
                 <div className="comparison-block reveal">
                     <h3 className="comparison-title text-center">
-                        Web na míru vs. WordPress vs. Wix — <span className="text-gradient">srovnání</span>
+                        Web na míru vs. WordPress vs. <span className="text-gradient">Wix</span>
                     </h3>
                     <p className="comparison-subtitle text-center">
                         Web v čistém kódu (React) je rychlejší, bezpečnější a lépe hodnocený AI vyhledávači než šablonové řešení.
-                        Průměrná cena webu na míru v ČR je 35–40 000 Kč — náš začíná od 15 000 Kč.
+                        Průměrná cena webu na míru v ČR je 35–40 000 Kč. U nás začíná od 15 000 Kč.
                     </p>
 
                     {/* Desktop tabulka */}
@@ -88,7 +88,7 @@ const Services = () => {
                                     <td>❌ Omezená</td>
                                 </tr>
                                 <tr>
-                                    <td>GEO — viditelnost v AI</td>
+                                    <td>GEO (viditelnost v AI)</td>
                                     <td className="highlight-col">✅ Schema.org, strukturovaná data</td>
                                     <td>⚠️ Závisí na pluginu</td>
                                     <td>❌ Minimální podpora</td>
