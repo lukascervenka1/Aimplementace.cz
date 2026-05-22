@@ -10,6 +10,7 @@ import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import FAQ from './components/FAQ';
 import Chatbot from './components/Chatbot';
+import WhatsApp from './components/WhatsApp';
 import ScrollReveal from './components/ScrollReveal';
 import InteractiveBackground from './components/InteractiveBackground';
 import gsap from 'gsap';
@@ -153,6 +154,7 @@ function App() {
         </div>
       </footer>
 
+      <WhatsApp />
       <Chatbot />
     </div>
   );
