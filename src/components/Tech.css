@@ -1,0 +1,75 @@
+/* ── TECH STACK BAR ── */
+#tech {
+  padding: 44px 0;
+  border-top: 1px solid var(--border);
+}
+
+.tech-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.tech-marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  padding: 10px 0;
+}
+
+.tech-marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 64px;
+  animation: scroll-marquee 24s linear infinite;
+}
+
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.tech-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.45;
+  transition: opacity 0.25s ease, filter 0.25s ease;
+  filter: grayscale(1) brightness(2);
+  flex-shrink: 0;
+  padding: 6px 12px;
+}
+.tech-logo:hover {
+  opacity: 0.9;
+  filter: grayscale(0) brightness(1);
+}
+
+.tech-logo img {
+  height: 22px;
+  width: auto;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+.tech-logo:hover img {
+  transform: rotate(360deg);
+}
+
+
+.tech-logo span {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.03em;
+}
