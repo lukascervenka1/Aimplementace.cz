@@ -9,7 +9,6 @@ import About from './components/About';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import FAQ from './components/FAQ';
-import Chatbot from './components/Chatbot';
 import WhatsApp from './components/WhatsApp';
 import ScrollReveal from './components/ScrollReveal';
 import InteractiveBackground from './components/InteractiveBackground';
@@ -155,7 +154,6 @@ function App() {
       </footer>
 
       <WhatsApp />
-      <Chatbot />
     </div>
   );
 }
