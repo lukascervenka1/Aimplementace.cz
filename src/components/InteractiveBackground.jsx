@@ -5,6 +5,9 @@ const InteractiveBackground = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
+    // Skip canvas entirely on touch/mobile — no mouse, pure GPU waste
+    if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -13,12 +16,16 @@ const InteractiveBackground = () => {
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
     
+    let resizeTimer;
     const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (!canvas) return;
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }, 150);
     };
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize, { passive: true });
     
     // Grid settings
     const size = 55; // denser grid spacing for high fidelity
@@ -108,6 +115,7 @@ const InteractiveBackground = () => {
     draw();
     
     return () => {
+      clearTimeout(resizeTimer);
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseleave', handleMouseLeave);

@@ -54,24 +54,23 @@ function App() {
       el._magneticLeave = leaveListener;
     });
 
-    // 2. Glow Cards Effect (Vercel/Linear style border glow)
-    const handleGlowMove = (e) => {
-      const cards = document.querySelectorAll('.glow-card');
-      cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
-      });
+    // 2. Glow Cards Effect — skip entirely on touch devices
+    if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
 
-      const ctaSection = document.getElementById('cta-final');
+    // Cache card references once — querySelectorAll on every mousemove is O(n) per frame
+    const glowCards = Array.from(document.querySelectorAll('.glow-card'));
+    const ctaSection = document.getElementById('cta-final');
+
+    const handleGlowMove = (e) => {
+      glowCards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+      });
       if (ctaSection) {
         const rect = ctaSection.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        ctaSection.style.setProperty('--mouse-x', `${x}px`);
-        ctaSection.style.setProperty('--mouse-y', `${y}px`);
+        ctaSection.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+        ctaSection.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
       }
     };
 

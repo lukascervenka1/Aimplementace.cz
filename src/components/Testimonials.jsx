@@ -54,7 +54,7 @@ const row2 = [
     tag: 'Váš projekt',
     quote: '"Mohl byste to být vy."',
     desc: 'Aktivně nabírám nové klienty — to pro vás znamená plnou pozornost a přímou komunikaci.',
-    link: '#cta-final'
+    link: '#contact'
   }
 ];
 

@@ -52,6 +52,11 @@
 @media (prefers-reduced-motion: reduce) {
   .glow-orb, #grid-texture { animation: none; }
 }
+@media (max-width: 768px) {
+  .glow-orb { display: none; }
+  #grid-texture { animation: none; opacity: 0.015; }
+  .cta-glow-orb { display: none; }
+}
 
 /* ── CTA FINAL SECTION ── */
 .cta-final-section {
@@ -145,16 +150,8 @@
   z-index: 1;
 }
 @keyframes cta-glow-pulse {
-  0%, 100% {
-    text-shadow: 0 0 15px rgba(139, 92, 246, 0.3), 0 0 30px rgba(139, 92, 246, 0.15);
-    color: var(--accent);
-    transform: scale(1);
-  }
-  50% {
-    text-shadow: 0 0 35px rgba(139, 92, 246, 0.6), 0 0 60px rgba(6, 182, 212, 0.4);
-    color: #c084fc; /* lighter violet */
-    transform: scale(1.02);
-  }
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.02); opacity: 0.85; }
 }
 .cta-h2 .serif-accent {
   font-family: var(--font-serif);

@@ -217,15 +217,18 @@ const Chatbot = () => {
                     <div className="chatbot-header-info">
                         <div className="chatbot-avatar">
                             <svg viewBox="0 0 36 36" fill="none" className="chatbot-avatar-icon">
-                                <path d="M10 27 L18 9 L26 27" stroke="url(#chatGrad)" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                                <line x1="13" y1="21" x2="23" y2="21" stroke="url(#chatGrad)" strokeWidth="2" strokeLinecap="round" />
-                                <circle cx="18" cy="5.5" r="2" fill="#f6bc7c" />
                                 <defs>
-                                    <linearGradient id="chatGrad" x1="10" y1="27" x2="26" y2="9">
-                                        <stop offset="0%" stopColor="#d9eafa" />
-                                        <stop offset="100%" stopColor="#f6bc7c" />
+                                    <linearGradient id="chatGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stopColor="#06b6d4" />
+                                        <stop offset="100%" stopColor="#8b5cf6" />
                                     </linearGradient>
                                 </defs>
+                                <path d="M18 4 L30 11 L30 25 L18 32 L6 25 L6 11 Z" stroke="url(#chatGrad)" strokeWidth="1.5" fill="none" />
+                                <path d="M6 25 L18 4 L30 25" stroke="url(#chatGrad)" strokeWidth="2" fill="none" />
+                                <line x1="12" y1="18" x2="24" y2="18" stroke="url(#chatGrad)" strokeWidth="1.5" />
+                                <circle cx="18" cy="4"  r="2" fill="#06b6d4" />
+                                <circle cx="6"  cy="25" r="2" fill="#8b5cf6" />
+                                <circle cx="30" cy="25" r="2" fill="#8b5cf6" />
                             </svg>
                         </div>
                         <div>

@@ -21,18 +21,11 @@ const ScrollReveal = () => {
           else if (el.classList.contains('reveal-delay-3')) delay = 0.3;
           else if (el.classList.contains('reveal-delay-4')) delay = 0.4;
 
-          gsap.set(el, { 
-            opacity: 0, 
-            y: 15, 
-            rotationX: -2, 
-            transformPerspective: 1000,
-            transformOrigin: 'top center'
-          });
+          gsap.set(el, { opacity: 0, y: 15 });
 
           gsap.to(el, {
             opacity: 1,
             y: 0,
-            rotationX: 0,
             duration: 0.45,
             delay: delay * 0.4, // cut stagger delays even more for instant feeling
             ease: 'power2.out',
