@@ -368,15 +368,63 @@
 
 @media (max-width: 480px) {
   #proof {
-    padding: 60px 0;
+    padding: 56px 0;
+  }
+  .proof-h2 {
+    font-size: clamp(24px, 7vw, 36px);
+  }
+  .marquee-container {
+    gap: 12px;
+  }
+  .marquee-track {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
   }
   .testimonial {
-    width: 300px;
-    padding: 24px;
-    min-height: 220px;
+    width: 260px;
+    padding: 20px;
+    min-height: 200px;
+    border-radius: 12px;
+  }
+  .testimonial-stars {
+    font-size: 12px;
+    margin-bottom: 10px;
   }
   .testimonial-quote {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.5;
+    margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .testimonial-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+  }
+  .testimonial-name {
+    font-size: 12px;
+  }
+  .testimonial-role {
+    font-size: 10px;
+  }
+  .testimonial-project-title {
+    font-size: 18px;
+  }
+  .testimonial-project-desc {
+    font-size: 12px;
+  }
+  .testimonial-cta-quote {
+    font-size: 16px;
+  }
+  .testimonial-cta-text {
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+  .testimonial-cta-btn {
+    font-size: 11px;
+    padding: 8px 18px;
   }
 }
