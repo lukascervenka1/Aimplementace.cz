@@ -128,7 +128,7 @@ function App() {
               Váš web může<br />vydělávat <span className="serif-accent">víc.</span>
             </h2>
             <div className="cta-buttons reveal reveal-delay-2">
-              <a href="mailto:info@aimplementace.cz" className="btn-primary magnetic">
+              <a href="#contact" className="btn-primary magnetic">
                 Nezávazná konzultace zdarma
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>

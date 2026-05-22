@@ -20,7 +20,7 @@ const Navbar = () => {
         <li><a href="#pricing">Ceník</a></li>
         <li><a href="#proof">Reference</a></li>
       </ul>
-      <a href="#cta-final" className="nav-cta magnetic">Nezávazná konzultace</a>
+      <a href="#contact" className="nav-cta magnetic">Nezávazná konzultace</a>
     </nav>
   );
 };

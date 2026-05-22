@@ -25,7 +25,7 @@ const Tech = () => {
               <div className="tech-logo" key={`${tech.slug}-1`}>
                 <img
                   src={`https://cdn.simpleicons.org/${tech.slug}/${tech.color}`}
-                  alt={tech.name}
+                  alt=""
                   loading="lazy"
                 />
                 <span>{tech.name}</span>
@@ -36,7 +36,7 @@ const Tech = () => {
               <div className="tech-logo" key={`${tech.slug}-2`}>
                 <img
                   src={`https://cdn.simpleicons.org/${tech.slug}/${tech.color}`}
-                  alt={tech.name}
+                  alt=""
                   loading="lazy"
                 />
                 <span>{tech.name}</span>

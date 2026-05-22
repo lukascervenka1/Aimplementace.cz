@@ -140,7 +140,7 @@ const Pricing = () => {
             </div>
             <div className="pricing-cycle">WEB HOTOVÝ DO 30 DNÍ</div>
             <FeatureList features={launchFeatures} />
-            <a href="#cta-final" className="pricing-cta">Chci web do 30 dní</a>
+            <a href="#contact" className="pricing-cta">Chci web do 30 dní</a>
             <p className="pricing-guarantee">
               *Orientační cena pro standardní rozsah.{' '}
               <strong>Konzultace je zdarma</strong> — přesný rozpočet schválíme předem.
@@ -163,7 +163,7 @@ const Pricing = () => {
             </div>
             <div className="pricing-cycle">WEB + AI CHATBOT · 6 MĚSÍCŮ PODPORY</div>
             <FeatureList features={scaleFeatures} />
-            <a href="#cta-final" className="pricing-cta">Chci začít se Scale</a>
+            <a href="#contact" className="pricing-cta">Chci začít se Scale</a>
             <p className="pricing-guarantee">
               <strong>6 měsíců podpory v ceně.</strong> Platíte až po schválení grafického návrhu.
             </p>
@@ -179,7 +179,7 @@ const Pricing = () => {
             <div className="pricing-price pricing-price--custom">Na míru</div>
             <div className="pricing-cycle">DLOUHODOBÝ ROZVOJ & AUTOMATIZACE</div>
             <FeatureList features={partnerFeatures} />
-            <a href="#cta-final" className="pricing-cta">Domluvme podmínky</a>
+            <a href="#contact" className="pricing-cta">Domluvme podmínky</a>
             <p className="pricing-guarantee">
               Nezávazná konzultace —{' '}
               <strong>do 48 hodin se spojíme s konkrétním návrhem</strong>.
