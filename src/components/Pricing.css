@@ -311,10 +311,20 @@
   .process-num {
     font-size: 38px;
   }
+
+  /* Pills: 2-column grid so all items align evenly */
   .service-pills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
   }
   .service-pill {
-    padding: 8px 14px;
+    padding: 10px 14px;
+    justify-content: center;
+    text-align: center;
+  }
+  /* Last pill takes full width when count is odd */
+  .service-pill:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 }
