@@ -131,7 +131,10 @@ const Pricing = () => {
         <div className="process-grid">
           {steps.map((step, i) => (
             <div className="process-step glow-card" key={i}>
-              <span className="process-num">{step.num}</span>
+              <span className="process-num">
+                <span className="process-num-zero">0</span>
+                <span className="process-num-digit">{step.num[1]}</span>
+              </span>
               <span className="process-tag">{step.tag}</span>
               <h3 className="process-title">{step.title}</h3>
               <p className="process-text">{step.text}</p>

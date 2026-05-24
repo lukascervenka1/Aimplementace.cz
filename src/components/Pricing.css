@@ -153,13 +153,19 @@
   font-weight: 700;
   letter-spacing: -0.05em;
   line-height: 1;
-  background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   margin-bottom: 8px;
   position: relative;
   z-index: 1;
+}
+
+/* "0" prefix — muted violet */
+.process-num-zero {
+  color: rgba(139, 92, 246, 0.55);
+}
+
+/* The actual digit — cyan */
+.process-num-digit {
+  color: #06b6d4;
 }
 
 .process-tag {
