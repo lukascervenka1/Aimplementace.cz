@@ -154,11 +154,8 @@ const Pricing = () => {
 
         {/* Single CTA */}
         <div className="pricing-sole-cta">
-          <a href="#contact" className="btn-primary magnetic">
+          <a href="#contact" className="nav-cta">
             Začít konzultaci zdarma
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-            </svg>
           </a>
           <p className="pricing-cta-note">
             Odpovídám do 24 hodin &nbsp;·&nbsp; Bez závazku &nbsp;·&nbsp; První konzultace zdarma
