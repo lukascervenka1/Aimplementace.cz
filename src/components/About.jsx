@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import LogoMark from './LogoMark';
 import './About.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -120,7 +121,9 @@ const About = () => {
 
             {/* Signature Block */}
             <div className="about-signature">
-              <div className="about-avatar">LČ</div>
+              <div className="about-avatar">
+                <LogoMark size={26} />
+              </div>
               <div className="about-sig-info">
                 <div className="about-sig-name">Lukáš Červenka</div>
                 <div className="about-sig-role">Zakladatel · AImplementace.cz · Praha</div>

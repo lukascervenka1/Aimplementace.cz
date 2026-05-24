@@ -1,8 +1,6 @@
 /* ── TESTIMONIALS / PROOF ── */
 #proof {
   padding: 120px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
   overflow: hidden; /* Prevent horizontal scrollbars from marquee breakout */
 }
 

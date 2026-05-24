@@ -1,7 +1,6 @@
 /* ── TECH STACK BAR ── */
 #tech {
   padding: 44px 0;
-  border-top: 1px solid var(--border);
 }
 
 .tech-label {

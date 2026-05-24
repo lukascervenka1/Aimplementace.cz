@@ -10,6 +10,7 @@ import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import FAQ from './components/FAQ';
 import WhatsApp from './components/WhatsApp';
+import LogoMark from './components/LogoMark';
 import ScrollReveal from './components/ScrollReveal';
 import InteractiveBackground from './components/InteractiveBackground';
 import gsap from 'gsap';
@@ -144,7 +145,13 @@ function App() {
 
       <footer className="site-footer" role="contentinfo">
         <div className="section-inner">
-          <div className="footer-copy">© 2026 AImplementace.cz · Lukáš Červenka · Praha</div>
+          <div className="footer-brand">
+            <LogoMark size={22} />
+            <div className="footer-brand-text">
+              <span className="footer-brand-name">AImplementace.cz</span>
+              <span className="footer-copy">© 2026 · Lukáš Červenka · Praha</span>
+            </div>
+          </div>
           <div className="footer-links">
             <a href="#">Ochrana osobních údajů</a>
             <a href="#">Obchodní podmínky</a>
