@@ -22,6 +22,11 @@
   padding: 10px 0;
 }
 
+/* Pause scrolling when user hovers — lets them actually read the logos */
+.tech-marquee-wrapper:hover .tech-marquee-track {
+  animation-play-state: paused;
+}
+
 .tech-marquee-track {
   display: flex;
   align-items: center;
@@ -54,15 +59,23 @@
   filter: grayscale(0) brightness(1);
 }
 
-.tech-logo img {
+.tech-logo img,
+.tech-icon-svg {
   height: 22px;
   width: auto;
   display: block;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
+  flex-shrink: 0;
 }
-.tech-logo:hover img {
-  transform: rotate(360deg);
+
+/* Spin on hover — animation always completes cleanly, never gets stuck mid-rotation */
+.tech-logo:hover img,
+.tech-logo:hover .tech-icon-svg {
+  animation: tech-spin 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes tech-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 
