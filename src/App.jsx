@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import FAQ from './components/FAQ';
 import WhatsApp from './components/WhatsApp';
 import LogoMark from './components/LogoMark';
+import CTASection from './components/CTASection';
 import ScrollReveal from './components/ScrollReveal';
 import InteractiveBackground from './components/InteractiveBackground';
 import gsap from 'gsap';
@@ -118,26 +119,7 @@ function App() {
         <About />
         <Pricing />
         
-        <section id="cta-final" className="cta-final-section">
-          <div className="cta-glow-orb cta-glow-orb-1" aria-hidden="true"></div>
-          <div className="cta-glow-orb cta-glow-orb-2" aria-hidden="true"></div>
-          
-          <div className="section-inner" style={{ position: 'relative', zIndex: 1 }}>
-            <div className="cta-overline reveal">Připraveni začít?</div>
-            <h2 className="cta-h2 reveal reveal-delay-1">
-              Váš web může<br />vydělávat <span className="serif-accent">víc.</span>
-            </h2>
-            <div className="cta-buttons reveal reveal-delay-2">
-              <a href="#contact" className="btn-primary magnetic">
-                Nezávazná konzultace zdarma
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
-              </a>
-              <a href="mailto:info@aimplementace.cz" className="btn-ghost magnetic">info@aimplementace.cz</a>
-            </div>
-          </div>
-        </section>
+        <CTASection />
         
         <Contact />
         <FAQ />

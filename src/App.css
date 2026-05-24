@@ -147,6 +147,13 @@
   margin-bottom: 48px;
   position: relative;
   z-index: 1;
+  /* Prevents layout shift when phrase lengths change */
+  min-height: 2.05em;
+}
+
+/* Keep scrambled characters monospaced width so text doesn't jump */
+.cta-main-line {
+  display: inline-block;
 }
 @keyframes cta-glow-pulse {
   0%, 100% { transform: scale(1); opacity: 1; }
