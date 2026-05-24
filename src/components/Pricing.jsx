@@ -5,34 +5,33 @@ import './Pricing.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const launchFeatures = [
-  { active: true,  text: 'Strategický audit + plán konverzí' },
-  { active: true,  text: 'Profesionální UI/UX design' },
-  { active: true,  text: 'Vícesekcový web (5+ stránek)' },
-  { active: true,  text: 'Technický SEO základ' },
-  { active: true,  text: 'Nasazení na rychlé edge síti' },
-  { active: false, text: 'AI integrace' },
-  { active: false, text: 'Průběžné reporty a optimalizace' },
+const steps = [
+  {
+    num: '01',
+    tag: 'ZDARMA · BEZ ZÁVAZKU',
+    title: 'Bezplatná konzultace',
+    text: 'Probereme váš projekt, cíle a představy. 30 minut online, žádný závazek. Odpovídám do 24 hodin.',
+  },
+  {
+    num: '02',
+    tag: 'FIX PRICE · ŽÁDNÁ PŘEKVAPENÍ',
+    title: 'Návrh s přesnou cenou',
+    text: 'Dostanete konkrétní plán, termín a fixní cenu — ještě před zahájením. Platíte teprve po odsouhlasení.',
+  },
+  {
+    num: '03',
+    tag: 'PRŮBĚŽNÉ UKÁZKY · PŘÍMÁ LINKA',
+    title: 'Realizace & předání',
+    text: 'Vy schvalujete každý krok. Po předání dostanete dokumentaci, zaškolení a přímý kontakt na mě.',
+  },
 ];
 
-const scaleFeatures = [
-  { active: true, text: 'Vše z Launch' },
-  { active: true, text: 'AI asistent nebo chatbot na míru' },
-  { active: true, text: 'Automatické e-maily a follow-upy' },
-  { active: true, text: 'A/B testování klíčových stránek' },
-  { active: true, text: 'Měsíční report s čísly navíc' },
-  { active: true, text: 'Priority podpora (reakce do 4 h)' },
-  { active: true, text: 'Konverzní optimalizace průběžně' },
-];
-
-const partnerFeatures = [
-  { active: true, text: 'Vše ze Scale' },
-  { active: true, text: 'Vlastní AI modely a agenti' },
-  { active: true, text: 'Napojení na CRM a interní systémy' },
-  { active: true, text: 'Dedikovaný tým (vývojář + stratég)' },
-  { active: true, text: 'SLA 99,9 % uptime' },
-  { active: true, text: 'Kvartální strategické review' },
-  { active: true, text: 'Google Ads + Sklik v ceně balíčku' },
+const services = [
+  { name: 'Web na míru',       price: 'od 15 000 Kč' },
+  { name: 'AI chatbot',        price: 'od 8 000 Kč'  },
+  { name: 'Automatizace',      price: 'od 10 000 Kč' },
+  { name: 'PPC správa',        price: 'od 5 000 Kč / měs.' },
+  { name: 'Kompletní rozjezd', price: 'od 25 000 Kč' },
 ];
 
 const trustItems = [
@@ -42,36 +41,28 @@ const trustItems = [
   'Platíte až po schválení návrhu',
 ];
 
-const FeatureList = ({ features }) => (
-  <ul className="pricing-features">
-    {features.map((f, i) => (
-      <li key={i} className={f.active ? 'active' : ''}>{f.text}</li>
-    ))}
-  </ul>
-);
-
 const Pricing = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
     let ctx;
-    
-    // Tiny delay to ensure DOM is fully painted
+
     const timer = setTimeout(() => {
       ctx = gsap.context(() => {
-        const header = containerRef.current.querySelector('.pricing-header');
-        const trust = containerRef.current.querySelector('.pricing-trust');
-        const cards = containerRef.current.querySelectorAll('.pricing-card');
+        const header   = containerRef.current.querySelector('.pricing-header');
+        const trust    = containerRef.current.querySelector('.pricing-trust');
+        const stepEls  = containerRef.current.querySelectorAll('.process-step');
+        const pills    = containerRef.current.querySelector('.service-pills-wrap');
+        const cta      = containerRef.current.querySelector('.pricing-sole-cta');
 
-        // Set initial state to prevent flash
-        gsap.set([header, trust, cards], { opacity: 0 });
+        gsap.set([header, trust, stepEls, pills, cta], { opacity: 0 });
 
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: containerRef.current,
             start: 'top 76%',
-            toggleActions: 'play none none none'
-          }
+            toggleActions: 'play none none none',
+          },
         });
 
         tl.fromTo(header,
@@ -83,10 +74,20 @@ const Pricing = () => {
           { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out' },
           '-=0.4'
         )
-        .fromTo(cards,
-          { opacity: 0, y: 40, rotationX: -3, transformPerspective: 1000, transformOrigin: 'top center' },
-          { opacity: 1, y: 0, rotationX: 0, stagger: 0.14, duration: 0.75, ease: 'power3.out' },
-          '-=0.45'
+        .fromTo(stepEls,
+          { opacity: 0, y: 40 },
+          { opacity: 1, y: 0, stagger: 0.14, duration: 0.75, ease: 'power3.out' },
+          '-=0.35'
+        )
+        .fromTo(pills,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out' },
+          '-=0.3'
+        )
+        .fromTo(cta,
+          { opacity: 0, y: 16 },
+          { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' },
+          '-=0.2'
         );
       });
     }, 100);
@@ -101,18 +102,21 @@ const Pricing = () => {
     <section id="pricing" ref={containerRef}>
       <div className="section-inner">
 
+        {/* Header */}
         <div className="pricing-header">
           <div>
-            <div className="section-label" style={{ marginBottom: '20px' }}>Balíčky služeb</div>
+            <div className="section-label" style={{ marginBottom: '20px' }}>Jak spolupráce funguje</div>
             <h2 className="pricing-h2">
-              Transparentní spolupráce,<br /><span className="serif-accent">skutečné výsledky</span>
+              Nejdřív mluvíme.<br />
+              <span className="serif-accent">Pak počítáme.</span>
             </h2>
           </div>
           <p className="pricing-sub">
-            <strong>Jasná pravidla</strong>, žádné skryté poplatky ani nepředvídatelné hodinové sazby. 
-            Každý projekt naceňujeme individuálně podle vašeho zadání — to vám <span>ušetří peníze i starosti</span>.
+            Každý projekt je jiný — proto <strong>cenu nikdy nestanovuji předem</strong>.
+            Vzniká až po konzultaci, kdy přesně vím, co potřebujete.
             <br /><br />
-            Každá spolupráce začíná <strong>bezplatnou konzultací</strong> — platíte teprve tehdy, až odsouhlasíte úvodní návrh.
+            Dostanete <span>fixní cenu a termín</span> ještě před zahájením.
+            Žádné hodinové sazby, žádná překvapení na konci.
           </p>
         </div>
 
@@ -123,70 +127,44 @@ const Pricing = () => {
           ))}
         </div>
 
-        <div className="pricing-grid">
-
-          {/* LAUNCH */}
-          <div className="pricing-card glow-card">
-            <div className="pricing-tier">Launch</div>
-            <div className="pricing-persona">
-              Pro firmy, které potřebují reprezentativní a rychlý web — bez kompromisů na kvalitě a rychlosti.
+        {/* 3-step process */}
+        <div className="process-grid">
+          {steps.map((step, i) => (
+            <div className="process-step glow-card" key={i}>
+              <span className="process-num">{step.num}</span>
+              <span className="process-tag">{step.tag}</span>
+              <h3 className="process-title">{step.title}</h3>
+              <p className="process-text">{step.text}</p>
             </div>
-            <div className="pricing-divider"></div>
-            <div className="pricing-price">
-              <span className="price-prefix">od </span>
-              <span className="currency">Kč</span>
-              <span className="price-val">29 900</span>
-              <span className="note">*</span>
-            </div>
-            <div className="pricing-cycle">WEB HOTOVÝ DO 30 DNÍ</div>
-            <FeatureList features={launchFeatures} />
-            <a href="#contact" className="pricing-cta">Chci web do 30 dní</a>
-            <p className="pricing-guarantee">
-              *Orientační cena pro standardní rozsah.{' '}
-              <strong>Konzultace je zdarma</strong> — přesný rozpočet schválíme předem.
-            </p>
-          </div>
-
-          {/* SCALE — featured */}
-          <div className="pricing-card featured glow-card">
-            <div className="pricing-badge">Nejčastější volba</div>
-            <div className="pricing-tier">Scale</div>
-            <div className="pricing-persona">
-              Pro firmy, které chtějí bleskový web s integrovaným AI asistentem, automatizací a podporou.
-            </div>
-            <div className="pricing-divider"></div>
-            <div className="pricing-price">
-              <span className="price-prefix">od </span>
-              <span className="currency">Kč</span>
-              <span className="price-val">59 900</span>
-              <span className="note">*</span>
-            </div>
-            <div className="pricing-cycle">WEB + AI CHATBOT · 6 MĚSÍCŮ PODPORY</div>
-            <FeatureList features={scaleFeatures} />
-            <a href="#contact" className="pricing-cta">Chci začít se Scale</a>
-            <p className="pricing-guarantee">
-              <strong>6 měsíců podpory v ceně.</strong> Platíte až po schválení grafického návrhu.
-            </p>
-          </div>
-
-          {/* PARTNER */}
-          <div className="pricing-card glow-card">
-            <div className="pricing-tier">Partner</div>
-            <div className="pricing-persona">
-              Pro rostoucí projekty hledající dlouhodobého technického partnera pro AI, weby a integrace.
-            </div>
-            <div className="pricing-divider"></div>
-            <div className="pricing-price pricing-price--custom">Na míru</div>
-            <div className="pricing-cycle">DLOUHODOBÝ ROZVOJ & AUTOMATIZACE</div>
-            <FeatureList features={partnerFeatures} />
-            <a href="#contact" className="pricing-cta">Domluvme podmínky</a>
-            <p className="pricing-guarantee">
-              Nezávazná konzultace —{' '}
-              <strong>do 48 hodin se spojíme s konkrétním návrhem</strong>.
-            </p>
-          </div>
-
+          ))}
         </div>
+
+        {/* Indicative service prices — not packages */}
+        <div className="service-pills-wrap">
+          <div className="service-pills-label">Orientační investice dle oblasti</div>
+          <div className="service-pills">
+            {services.map((s) => (
+              <div className="service-pill" key={s.name}>
+                <span className="service-pill-name">{s.name}</span>
+                <span className="service-pill-price">{s.price}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Single CTA */}
+        <div className="pricing-sole-cta">
+          <a href="#contact" className="btn-primary magnetic">
+            Začít konzultaci zdarma
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+          </a>
+          <p className="pricing-cta-note">
+            Odpovídám do 24 hodin &nbsp;·&nbsp; Bez závazku &nbsp;·&nbsp; První konzultace zdarma
+          </p>
+        </div>
+
       </div>
     </section>
   );
