@@ -158,9 +158,12 @@
   z-index: 1;
 }
 
-/* "0" prefix — muted violet */
+/* "0" prefix — violet gradient */
 .process-num-zero {
-  color: rgba(139, 92, 246, 0.55);
+  background: linear-gradient(135deg, #8b5cf6 0%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* The actual digit — cyan */
