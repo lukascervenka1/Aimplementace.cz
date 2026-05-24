@@ -8,23 +8,23 @@ gsap.registerPlugin(ScrollTrigger);
 const steps = [
   {
     num: '01 / KONZULTACE',
-    title: 'Výběr procesu',
-    desc: 'Vybereme 1 oblast s nejvyšším potenciálem úspory a nejnižším rizikem. Konzultace zdarma.',
+    title: 'Nejdřív si promluvíme',
+    desc: 'Řeknete mi, co potřebujete nebo co vás trápí. Domluvíme se, co má největší smysl řešit jako první. Zdarma, bez závazků.',
   },
   {
     num: '02 / NÁVRH',
-    title: 'Plán & pevná cena',
-    desc: 'Navrhneme workflow, metriky úspěchu a konkrétní milníky. Přesná cena a termín předem — žádná překvapení.',
+    title: 'Pevná cena a termín',
+    desc: 'Dostanete konkrétní plán s přesnou cenou a termínem. Žádné odhady ani hodinové sazby. Víte dopředu, co zaplatíte.',
   },
   {
     num: '03 / REALIZACE',
-    title: 'Vývoj v provozu',
-    desc: 'Nasadíme do reálné práce a ladíme podle zpětné vazby. Průběžně ukazujeme výsledky, vy schvalujete každý krok.',
+    title: 'Stavíme a ukazujeme',
+    desc: 'Průběžně vám ukazujeme výsledky a vy schvalujete každý krok. Výsledek bude přesně to, co jste chtěli.',
   },
   {
     num: '04 / PŘEDÁNÍ',
-    title: 'Zaškolení & podpora',
-    desc: 'Kompletní dokumentace, zaškolení týmu a podpora po spuštění. Komunikujete přímo se mnou — žádní prostředníci.',
+    title: 'Zaškolení a podpora',
+    desc: 'Dostanete popis, jak vše funguje, a zaškolení. Jsem dostupný i po spuštění a komunikujete přímo se mnou.',
   },
 ];
 
@@ -152,8 +152,9 @@ const Process = () => {
             </h2>
           </div>
           <p className="process-intro reveal reveal-delay-1">
-            <strong>Čtyři fáze</strong>, jasné výstupy v každé z nich. Nikdy nezačínáme kódovat,
-            dokud nezpochybníme každý předpoklad — to <span>ušetří týdny práce i peněz</span>.
+            <strong>Čtyři kroky</strong>, jasný výsledek v každém z nich. Nejdřív porozumím
+            vašim potřebám, pak teprve stavíme. Tak se nestane, že skončíte
+            s něčím, co <span>nepotřebujete</span>.
           </p>
         </div>
 

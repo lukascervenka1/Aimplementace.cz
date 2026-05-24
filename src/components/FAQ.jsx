@@ -3,40 +3,40 @@ import './FAQ.css';
 
 const faqData = [
   {
-    question: 'Kolik stojí tvorba webových stránek na míru?',
-    answer: 'Tvorba webu na míru v ČR stojí průměrně 35–40 000 Kč. U nás začínáme od 15 000 Kč — díky efektivnímu procesu a moderním nástrojům. Nabízíme pevnou cenu (rozsah i částka dohodnuty předem) nebo hodinovou sazbu. Balíček Rozjezd podnikání s doménou, e-mailem a automatizací začíná od 25 000 Kč. První konzultace je zdarma.',
+    question: 'Kolik stojí tvorba webu na míru?',
+    answer: 'Jinde za web na míru zaplatíte průměrně 35 až 40 tisíc Kč. U nás to začíná od 15 000 Kč. Vždy domluvíme přesnou cenu a rozsah ještě před začátkem, takže na konci žádná překvapení. První konzultace je zdarma.',
   },
   {
     question: 'Jak dlouho trvá tvorba webu?',
-    answer: 'Web na míru je hotový za 2–3 týdny od schválení návrhu. Průběžně ukazujeme výsledky a vy schvalujete každý krok. U jednodušších projektů (landing page, vizitka) to může být i 7–10 dní. Balíček Rozjezd podnikání — od domény přes e-mail až po spuštěný web s automatizací — zvládáme za stejný časový rámec.',
+    answer: 'Web na míru bývá hotový za 2 až 3 týdny od schválení návrhu. U jednodušší stránky, třeba vizitka nebo landing page, to zvládneme i za 7 až 10 dní. Průběžně ukazuji výsledky, takže vždy víte, co vzniká.',
   },
   {
     question: 'Proč nepoužíváte WordPress nebo Wix?',
-    answer: 'Stavíme weby v čistém kódu (React), protože dosahují LCP pod 1 sekundu, mají lepší Core Web Vitals a jsou bezpečnější (žádné pluginy = žádné zranitelnosti). WordPress trpí průměrným LCP 2–4 sekundy kvůli pluginům, Wix je ještě pomalejší. Navíc weby v čistém kódu lépe podporují strukturovaná data Schema.org, která jsou klíčová pro viditelnost v AI vyhledávačích.',
+    answer: 'WordPress a Wix jsou šablonovací systémy plné doplňků, které web zpomalují. Průměrný WordPress web se načte za 2 až 4 sekundy. Naše weby se načtou do 1 sekundy, protože jsou postavené na míru bez zbytečného balastu. A Google rychlé weby odměňuje vyšší pozicí ve výsledcích vyhledávání.',
   },
   {
-    question: 'Co je GEO a proč ho váš web potřebuje?',
-    answer: 'GEO (Generative Engine Optimization) je optimalizace webu tak, aby ho citovaly AI modely — ChatGPT, Perplexity, Google AI Overviews nebo Claude. V roce 2026 přes 60 % vyhledávání na Googlu zobrazí AI odpověď ještě před klasickými výsledky. Každý web, který stavíme, obsahuje strukturovaná data Schema.org, FAQ bloky a přesné datové body — to jsou faktory, které AI cituje nejčastěji.',
+    question: 'Může mě zmínit ChatGPT nebo Google AI?',
+    answer: 'Ano, a je to čím dál důležitější. Dnes přes 60 % lidí dostane odpověď od AI ještě před tím, než klikne na výsledky vyhledávání. Každý web stavíme tak, aby ho AI dokázala pochopit a doporučit. Jde o to, jak web technicky popíšeme, aby mu AI rozuměla.',
   },
   {
-    question: 'Jsou vaše weby viditelné v AI vyhledávačích (ChatGPT, Perplexity)?',
-    answer: 'Ano. Každý web implementujeme se strukturovanými daty Schema.org (Organization, Service, FAQ, Review), správnými meta tagy a robots.txt, který explicitně povoluje AI crawlery (GPTBot, ClaudeBot, PerplexityBot, Google-Extended). ChatGPT čerpá 87 % citací z top výsledků Bingu — proto zajišťujeme indexaci i tam. Perplexity preferuje čerstvý obsah s přesnými čísly, což do textů zapracováváme.',
+    question: 'Jsou vaše weby viditelné v ChatGPT a Perplexity?',
+    answer: 'Ano. Každý web nastavíme tak, aby ho mohly procházet AI nástroje jako ChatGPT, Perplexity nebo Google AI. ChatGPT nejčastěji doporučuje weby, které jsou vidět i na Bingu, proto zajistíme indexaci i tam.',
   },
   {
-    question: 'Co je AI chatbot a jak pomůže mému podnikání?',
-    answer: 'AI chatbot je automatický asistent na webu, který komunikuje s návštěvníky 24/7. Kvalifikuje zákazníky, sbírá kontakty a předává leady do CRM — bez účasti vašeho týmu. Firmy s chatbotem zachytí průměrně 3× více leadů mimo pracovní dobu. Chatbot splňuje požadavky AI Actu 2026 — jasně se představuje jako asistent. Ukázku vidíte na tomto webu vpravo dole.',
+    question: 'Co je AI chatbot a jak pomůže mé firmě?',
+    answer: 'AI chatbot je automatický asistent na vašem webu, který odpovídá zákazníkům i v noci nebo o víkendu. Zachytí poptávku, zapíše kontakt a pošle ho vám. Firmy s chatbotem průměrně zachytí třikrát více zákazníků mimo pracovní dobu.',
   },
   {
-    question: 'Jaké automatizace nabízíte a jaké nástroje používáte?',
-    answer: 'Automatizujeme propojení CRM, tabulek, e-mailů a interních systémů pomocí Power Automate a automatického testování přes Playwright. Typické výsledky: ušetření 6–10 hodin týdně při zpracování poptávek, automatické notifikace, přepis dat z formulářů do CRM a generování reportů. Podle ČSÚ plánuje 9 z 10 českých firem investovat do AI automatizace v roce 2026.',
+    question: 'Co všechno lze automatizovat?',
+    answer: 'Automatizujeme věci, které vám opakovaně berou čas: přepis poptávek do tabulky nebo systému, odesílání potvrzovacích e-mailů, upozornění při nové objednávce nebo třeba generování měsíčních reportů. Průměrně ušetříme 6 až 10 hodin práce týdně.',
   },
   {
     question: 'Jak probíhá spolupráce?',
-    answer: 'Spolupráce má 5 kroků: (1) Nezávazná konzultace zdarma — probereme vaše potřeby. (2) Návrh na míru — přesná cena a termín. (3) Realizace — průběžně ukazujeme výsledky, vy schvalujete. (4) Předání + zaškolení — kompletní dokumentace a návod. (5) Podpora po spuštění. Komunikujete přímo s Lukášem — žádný tým prostředníků.',
+    answer: 'Spolupráce má 5 kroků. Nejdřív si provoláme vaše potřeby, zdarma a bez závazků. Pak dostanete návrh s přesnou cenou a termínem. Pak přichází realizace s průběžnými ukázkami. Po spuštění vám vše vysvětlím a předám dokumentaci. A jsem dostupný i dál. Komunikujete přímo se mnou, žádný tým prostředníků.',
   },
   {
-    question: 'Mohu si vybrat model platby?',
-    answer: 'Ano, nabízíme dva modely. Pevná cena (fix price) — dohodneme rozsah a cenu předem, víte přesně, kolik zaplatíte, žádná překvapení. Hodinová sazba (time & material) — flexibilní model, platíte jen skutečně odpracovaný čas, ideální pro projekty s měnícím se rozsahem. Na konzultaci vám poradíme, který model je pro váš projekt výhodnější.',
+    question: 'Jak se platí?',
+    answer: 'Nabízím dva přístupy. Pevná cena: domluvíme rozsah a cenu předem, víte přesně co zaplatíte. Hodinová sazba: platíte jen odpracovaný čas, hodí se pro projekty kde rozsah ještě není jasný. Na konzultaci vám poradím, co je pro vás výhodnější.',
   },
 ];
 
@@ -55,7 +55,7 @@ const FAQ = () => {
         </h2>
         <p className="faq-subheading reveal reveal-delay-1">
           Odpovědi na nejčastější otázky o tvorbě webů, AI automatizacích, cenách a spolupráci.
-          Nenašli jste odpověď? Napište nám — první konzultace je zdarma.
+          Nenašli jste odpověď? Napište nám, první konzultace je zdarma.
         </p>
         <div className="faq-list reveal">
           {faqData.map((faq, index) => (
@@ -85,7 +85,7 @@ const FAQ = () => {
         </div>
         <div className="faq-footer reveal">
           <p className="faq-footer-text">Máte jinou otázku?</p>
-          <a href="#contact" className="faq-footer-link">Zeptejte se — konzultace zdarma</a>
+          <a href="#contact" className="faq-footer-link">Zeptejte se, konzultace zdarma</a>
         </div>
       </div>
     </section>

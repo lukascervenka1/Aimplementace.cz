@@ -67,16 +67,17 @@ const About = () => {
               {/* Card 1: Results & Dev */}
               <div className="about-card glow-card">
                 <div className="about-card-inner">
-                  <div className="about-card-tag">Vývoj &amp; Výsledky</div>
-                  <h3 className="about-card-title">Měřitelný dopad místo prezentací</h3>
+                  <div className="about-card-tag">Výsledky, ne prezentace</div>
+                  <h3 className="about-card-title">Čísla, která něco znamenají</h3>
                   <p className="about-card-text">
-                    Nehraju si na korporátní schůzky a zdlouhavé slajdy. Každý projekt dodávám 
-                    s čistým a optimalizovaným kódem, který má jasné a měřitelné výsledky pro vaše podnikání.
+                    Nehraju si na korporátní schůzky a zdlouhavé slajdy. Dodám vám
+                    funkční výsledek s jasnými čísly, co se zlepšilo, kolik zákazníků přibylo
+                    a kolik hodin ušetřila automatizace.
                   </p>
                   <div className="about-card-tags-row">
-                    <span className="about-card-pill">React</span>
-                    <span className="about-card-pill">Power Automate</span>
-                    <span className="about-card-pill">Playwright</span>
+                    <span className="about-card-pill">Weby na míru</span>
+                    <span className="about-card-pill">Automatizace</span>
+                    <span className="about-card-pill">PPC reklamy</span>
                   </div>
                 </div>
               </div>
@@ -84,16 +85,16 @@ const About = () => {
               {/* Card 2: Speed & AI-Ready */}
               <div className="about-card glow-card">
                 <div className="about-card-inner">
-                  <div className="about-card-tag">Rychlost &amp; AI-Ready SEO</div>
-                  <h3 className="about-card-title">SEO &amp; AI indexace od prvního dne</h3>
+                  <div className="about-card-tag">Rychlý web, viditelný všude</div>
+                  <h3 className="about-card-title">Google vás najde. ChatGPT vás zmíní.</h3>
                   <p className="about-card-text">
-                    Stavím weby s bleskovým načítáním (LCP pod 1 sekundu) bez těžkých redakčních systémů. 
-                    Díky Schema.org strukturovaným datům váš web snadno najdou a citují i AI vyhledávače 
-                    jako ChatGPT, Perplexity či Google AI Overviews.
+                    Weby stavím tak, aby se načetly rychle a Google je miloval. Navíc vás
+                    mohou zmínit i ChatGPT nebo Perplexity, kde dnes lidé stále
+                    častěji hledají firmy a služby.
                   </p>
                   <div className="about-card-tags-row">
-                    <span className="about-card-pill">LCP &lt; 1.0s</span>
-                    <span className="about-card-pill">Schema.org</span>
+                    <span className="about-card-pill">Rychlé načtení</span>
+                    <span className="about-card-pill">Viditelný v AI</span>
                     <span className="about-card-pill">Bezpečnost</span>
                   </div>
                 </div>
@@ -105,9 +106,8 @@ const About = () => {
                   <div className="about-card-tag">Spolupráce 1-na-1</div>
                   <h3 className="about-card-title">Přímá linka bez prostředníků</h3>
                   <p className="about-card-text">
-                    Dostanete moji plnou pozornost a flexibilitu bez nutnosti platit drahé týmy a projektové 
-                    manažery. Rychlá implementace a transparentní cena již od 15 000 Kč – každý projekt beru 
-                    jako svou vizitku.
+                    Pracujete přímo se mnou, ne s týmem prostředníků. Odpovím
+                    do 24 hodin a ke každému projektu přistupuji, jako by byl můj vlastní.
                   </p>
                   <div className="about-card-tags-row">
                     <span className="about-card-pill">Od 15 000 Kč</span>

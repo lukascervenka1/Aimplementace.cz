@@ -86,10 +86,9 @@ const Hero = () => {
 
           <div className="hero-description">
             <div className="hero-description-inner">
-              Pomáhám firmám růst a šetřit čas tam, kde je to nejvíc pálí. Ať už potřebujete
-              nový moderní web, který sám získává zákazníky, efektivní PPC kampaně, nebo
-              chytré AI automatizace, které za vás odpracují rutinní úkoly – navrhnu a dodám
-              řešení na míru vašim cílům.
+              Pomáhám malým firmám získávat zákazníky přes internet a ušetřit čas
+              na věcech, které jdou automatizovat. Web, reklamy nebo AI asistent,
+              vždy na míru a vždy s přesnou cenou předem.
             </div>
           </div>
 
@@ -110,7 +109,7 @@ const Hero = () => {
             </div>
             <div className="stat-item">
               <div className="stat-number">3.7<em>×</em></div>
-              <div className="stat-label">průměrný růst konverzí</div>
+              <div className="stat-label">více zákazníků z webu</div>
             </div>
           </div>
         </div>

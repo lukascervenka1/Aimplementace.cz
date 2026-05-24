@@ -46,12 +46,12 @@ const services = [
       </svg>
     ),
     title: 'Weby, které prodávají',
-    desc: 'React web v čistém kódu — žádný WordPress, žádné pluginy. LCP pod 1 sekundu, SEO od základu a strukturovaná data, díky kterým vás citují i ChatGPT a Perplexity.',
+    desc: 'Web postavený přesně pro vás, bez šablon a pomalých doplňků. Načte se rychle, Google ho miluje a zákazníci vás najdou sami. Dokonce vás může zmínit i ChatGPT nebo Perplexity.',
     items: [
-      'UI/UX design & prototypování ve Figmě',
-      'React / Next.js v čistém kódu',
-      'SEO + GEO (viditelnost v AI vyhledávačích)',
-      'Core Web Vitals — všechny zelené',
+      'Návrh a design webu',
+      'Rychlý web bez šablon',
+      'Viditelnost na Googlu i v ChatGPT',
+      'Rychlé načtení na mobilu i počítači',
       'Hotovo za 2–3 týdny, od 15 000 Kč',
     ],
   },
@@ -93,13 +93,13 @@ const services = [
       </svg>
     ),
     title: 'AI implementace',
-    desc: 'Zapojíme AI přímo do vašich procesů. Typický výsledek: ušetření 6–10 hodin týdně. Chatbot splňuje AI Act 2026 — vždy se představí jako asistent.',
+    desc: 'AI pracuje za vás i o víkendu. Odpovídá zákazníkům, zapisuje poptávky a posílá e-maily automaticky. Průměrně vám ušetří 6 až 10 hodin práce týdně.',
     items: [
-      'AI konzultace & implementační plán',
-      'Automatické e-maily & follow-upy',
-      'Live AI asistent (chat / hlas) 24/7',
-      'Automatizace workflow (Power Automate)',
-      'Integrace do CRM a interních systémů',
+      'Poradíme, kde AI opravdu pomůže',
+      'Automatické odpovědi a připomínky',
+      'Chatbot na webu dostupný nonstop',
+      'Automatizace opakujících se úkolů',
+      'Napojení na váš stávající systém',
     ],
   },
   {
@@ -135,13 +135,13 @@ const services = [
       </svg>
     ),
     title: 'PPC & online marketing',
-    desc: 'Platíte za kliknutí, my hlídáme, aby každá koruna přinesla zákazníka. Spravujeme kampaně na Googlu i Skliku s jasnou návratností.',
+    desc: 'Platíte za reklamu, my hlídáme, aby každá koruna přinesla zákazníka. Každý měsíc dostanete report, co reklamy přinesly a co plánujeme dál.',
     items: [
-      'Google Ads (Search, Display, Shopping)',
-      'Sklik (Seznam.cz)',
-      'Analytika & conversion tracking',
-      'Remarketing & audience strategie',
-      'Měsíční reporting s čistými čísly',
+      'Reklamy na Googlu',
+      'Reklamy na Skliku (Seznam.cz)',
+      'Sledování výsledků a objednávek',
+      'Reklama cílená na správné lidi',
+      'Měsíční report v češtině',
     ],
   },
 ];

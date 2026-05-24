@@ -4,7 +4,7 @@ import './Starter.css';
 const included = [
     { icon: '🌍', label: 'Registrace domény na vaše jméno' },
     { icon: '📧', label: 'Firemní e-mail (Google / Outlook)' },
-    { icon: '🎨', label: 'Web na míru — design, kód, obsah' },
+    { icon: '🎨', label: 'Web na míru: design, kód, obsah' },
     { icon: '📱', label: 'Responzivní na mobilu i tabletu' },
     { icon: '🔍', label: 'SEO základ pro Google' },
     { icon: '⚡', label: 'Automatizace (formulář, notifikace, CRM)' },
@@ -22,13 +22,13 @@ const workflow = [
     {
         step: 2,
         title: 'Doména a firemní identita',
-        description: 'Vybereme a zaregistrujeme doménu (vašefirma.cz nebo .com). Doména bude na vaše jméno — je to váš majetek, ne náš. Připravíme logo a vizuální styl, pokud ho ještě nemáte.',
+        description: 'Vybereme a zaregistrujeme doménu (vašefirma.cz nebo .com). Doména bude na vaše jméno, je to váš majetek, ne náš. Připravíme logo a vizuální styl, pokud ho ještě nemáte.',
         duration: '1–2 dny',
     },
     {
         step: 3,
         title: 'Profesionální e-mail',
-        description: 'Napojíme Google Workspace nebo Microsoft 365. Budete mít jmeno@vašefirma.cz — profesionální dojem od prvního kontaktu. Kalendář, disk a videohovory v ceně.',
+        description: 'Napojíme Google Workspace nebo Microsoft 365. Budete mít jmeno@vašefirma.cz. Profesionální dojem od prvního kontaktu. Kalendář, disk a videohovory v ceně.',
         duration: '1 den',
     },
     {
@@ -46,7 +46,7 @@ const workflow = [
     {
         step: 6,
         title: 'Předání a zaškolení',
-        description: 'Vše otestujeme, předáme kompletní přístupy a provedeme vás celým systémem. Dostanete i krátký návod. Podpora od nás nekončí — jsme tu i po spuštění.',
+        description: 'Vše otestujeme, předáme kompletní přístupy a provedeme vás celým systémem. Dostanete i krátký návod. Podpora od nás nekončí, jsme tu i po spuštění.',
         duration: 'Hotovo za 2–3 týdny',
     },
 ];
@@ -61,7 +61,7 @@ const Starter = () => {
                         Rozjezd <span className="text-gradient">podnikání</span>
                     </h2>
                     <p className="section-subtitle">
-                        Všechno, co potřebujete k profesionálnímu startu — od domény přes web až po
+                        Všechno, co potřebujete k profesionálnímu startu: od domény přes web až po
                         první automatizace. Vy se soustředíte na byznys, my vyřešíme techniku.
                     </p>
                 </div>

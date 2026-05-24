@@ -16,7 +16,7 @@ const steps = [
     num: '02',
     tag: 'FIX PRICE · ŽÁDNÁ PŘEKVAPENÍ',
     title: 'Návrh s přesnou cenou',
-    text: 'Dostanete konkrétní plán, termín a fixní cenu — ještě před zahájením. Platíte teprve po odsouhlasení.',
+    text: 'Dostanete konkrétní plán, termín a pevnou cenu. To vše ještě před zahájením. Platíte teprve po odsouhlasení návrhu.',
   },
   {
     num: '03',
@@ -112,10 +112,10 @@ const Pricing = () => {
             </h2>
           </div>
           <p className="pricing-sub">
-            Každý projekt je jiný — proto <strong>cenu nikdy nestanovuji předem</strong>.
+            Každý projekt je jiný, proto <strong>cenu nestanovuji předem</strong>.
             Vzniká až po konzultaci, kdy přesně vím, co potřebujete.
             <br /><br />
-            Dostanete <span>fixní cenu a termín</span> ještě před zahájením.
+            Dostanete <span>pevnou cenu a termín</span> ještě před zahájením.
             Žádné hodinové sazby, žádná překvapení na konci.
           </p>
         </div>

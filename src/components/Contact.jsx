@@ -50,7 +50,7 @@ const Contact = () => {
                 Pojďme se<br /><span className="contact-heading-accent">bavit</span>
               </h2>
               <p className="contact-description">
-                Napište mi, co potřebujete — web, automatizaci, nebo kompletní rozjezd.
+                Napište mi, co potřebujete: web, AI automatizaci nebo kompletní rozjezd firmy.
                 První konzultace je zdarma a bez závazků.
               </p>
               <div className="contact-details">

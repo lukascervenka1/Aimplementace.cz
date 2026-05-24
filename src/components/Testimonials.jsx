@@ -53,7 +53,7 @@ const row2 = [
     type: 'cta',
     tag: 'Váš projekt',
     quote: '"Mohl byste to být vy."',
-    desc: 'Aktivně nabírám nové klienty — to pro vás znamená plnou pozornost a přímou komunikaci.',
+    desc: 'Aktivně nabírám nové klienty. To pro vás znamená plnou pozornost a přímou komunikaci.',
     link: '#contact'
   }
 ];
