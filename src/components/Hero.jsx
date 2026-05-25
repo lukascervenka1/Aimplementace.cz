@@ -32,11 +32,12 @@ const Hero = () => {
       '-=0.65'
     )
     // "automaticky." — blur-to-sharp materialise + kick off flowing gradient
+    // No scale/translateY — transform:none in CSS keeps it in correct position
     .fromTo(accentLine,
-      { opacity: 0, scale: 0.86, filter: 'blur(22px)' },
+      { opacity: 0, filter: 'blur(24px)' },
       {
-        opacity: 1, scale: 1, filter: 'blur(0px)',
-        duration: 1.15, ease: 'power3.out',
+        opacity: 1, filter: 'blur(0px)',
+        duration: 1.2, ease: 'power3.out',
         onStart() { accentLine.style.animationPlayState = 'running'; },
       },
       '-=0.12'

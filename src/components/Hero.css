@@ -78,6 +78,9 @@
   letter-spacing: -0.02em;
   line-height: 1.0;
 
+  /* Override the base translateY(110%) — GSAP handles this line separately */
+  transform: none;
+
   /* Flowing gradient text fill */
   background: linear-gradient(
     90deg,
