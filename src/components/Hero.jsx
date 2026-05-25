@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
+import LogoMark from './LogoMark';
 import './Hero.css';
 
 const Hero = () => {
@@ -20,6 +21,23 @@ const Hero = () => {
 
     // Set initial GSAP states programmatically to prevent CSS flickering
     gsap.set([eyebrow, headlineLines, accentLine, description, actions, stats, mockupWindow, floatingCards, scrollLine], { opacity: 0 });
+
+    // Pre-hide the logo dot's strokes for the draw-on assembly
+    const logoDotSVG  = document.querySelector('.hero-logo-dot svg');
+    if (logoDotSVG) {
+      const strokes = logoDotSVG.querySelectorAll('path, line');
+      const nodes   = logoDotSVG.querySelectorAll('circle');
+      strokes.forEach(el => {
+        const len = el.getTotalLength ? el.getTotalLength()
+          : Math.hypot(
+              (el.x2?.baseVal.value ?? 0) - (el.x1?.baseVal.value ?? 0),
+              (el.y2?.baseVal.value ?? 0) - (el.y1?.baseVal.value ?? 0)
+            );
+        el.style.strokeDasharray  = len;
+        el.style.strokeDashoffset = len;
+      });
+      gsap.set(nodes, { scale: 0, transformOrigin: 'center center' });
+    }
 
     tl.fromTo(eyebrow,
       { y: '100%', opacity: 0 },
@@ -42,6 +60,15 @@ const Hero = () => {
       },
       '-=0.12'
     )
+    // Logo dot assembly: strokes draw on, then nodes pop in
+    .add(() => {
+      if (logoDotSVG) {
+        const strokes = logoDotSVG.querySelectorAll('path, line');
+        const nodes   = logoDotSVG.querySelectorAll('circle');
+        gsap.to(strokes, { strokeDashoffset: 0, duration: 0.7, stagger: 0.1, ease: 'power2.out' });
+        gsap.to(nodes,   { scale: 1, duration: 0.3, stagger: 0.05, delay: 0.3, ease: 'back.out(3)' });
+      }
+    }, '-=0.35')
     .fromTo(description,
       { y: 20, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.7 },
@@ -94,7 +121,9 @@ const Hero = () => {
               <span className="headline-line-inner">VYDĚLÁVÁ</span>
             </span>
             <span className="headline-line">
-              <span className="headline-line-inner gradient-accent">automaticky.</span>
+              <span className="headline-line-inner gradient-accent">
+                automaticky<span className="hero-logo-dot" aria-hidden="true"><LogoMark size={64} /></span>
+              </span>
             </span>
           </h1>
 

@@ -106,6 +106,20 @@
   50%  { background-position: 100% center; }
   100% { background-position:   0% center; }
 }
+
+/* ── LOGO DOT (replaces the period in "automaticky.") ── */
+.hero-logo-dot {
+  display: inline-block;
+  vertical-align: -0.06em;
+  margin-left: 0.04em;
+  line-height: 0;
+}
+.hero-logo-dot svg {
+  width: 0.52em;
+  height: 0.52em;
+  display: block;
+}
+
 .headline-line:nth-child(2) .headline-line-inner { transition-delay: 0.08s; }
 .headline-line:nth-child(3) .headline-line-inner { transition-delay: 0.16s; }
 .headline-line:nth-child(4) .headline-line-inner { transition-delay: 0.24s; }
