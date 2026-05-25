@@ -41,12 +41,22 @@
   color: var(--white);
   margin-bottom: 24px;
 }
-.about-statement .serif-accent {
-  font-family: 'Instrument Serif', serif;
-  font-style: italic;
-  font-weight: 400;
-  color: var(--blue);
+.about-statement .about-accent {
   display: block;
+  background: linear-gradient(90deg, #06b6d4 0%, #8b5cf6 55%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── BIO PARAGRAPH ── */
+.about-bio {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 360px;
+  margin-bottom: 28px;
 }
 
 .about-photo {

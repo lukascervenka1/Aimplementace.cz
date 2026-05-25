@@ -44,18 +44,27 @@ const About = () => {
       <div className="section-inner">
         <div className="about-layout">
 
-          {/* Left Column: Profile Card & Core Philosophy */}
+          {/* Left Column: Profile Card & Bio */}
           <div className="about-left">
             <div className="about-overline">Kdo za tím stojí</div>
             <h2 className="about-statement">
               Nejsem<br />agentura.<br />
-              <span className="serif-accent">Jsem člověk.</span>
+              <span className="about-accent">Jsem člověk.</span>
             </h2>
-            
+
+            <p className="about-bio">
+              Vystudoval jsem grafický design, ale ten mě brzy zavedl k webu
+              a web do světa IT. V kariéře jsem prošel různými rolemi ve
+              velkých korporacích i v malých firmách, od vývojáře přes správce
+              systémů až po architekta firemních procesů. Nakonec mi přišlo
+              zbytečné pracovat pro velké firmy, když ty malé potřebují pomoct
+              víc a výsledky jsou vidět rychleji.
+            </p>
+
             <div className="about-photo glow-card">
               <img
                 src="/luke.jpeg"
-                alt="Lukáš Červenka — zakladatel AImplementace.cz"
+                alt="Lukáš Červenka, zakladatel AImplementace.cz"
               />
             </div>
           </div>
@@ -64,15 +73,16 @@ const About = () => {
           <div className="about-right">
             <div className="about-cards-stack">
               
-              {/* Card 1: Results & Dev */}
+              {/* Card 1: Origin story */}
               <div className="about-card glow-card">
                 <div className="about-card-inner">
-                  <div className="about-card-tag">Výsledky, ne prezentace</div>
-                  <h3 className="about-card-title">Čísla, která něco znamenají</h3>
+                  <div className="about-card-tag">Jak to začalo</div>
+                  <h3 className="about-card-title">Design, korporace a vlastní cesta</h3>
                   <p className="about-card-text">
-                    Nehraju si na korporátní schůzky a zdlouhavé slajdy. Dodám vám
-                    funkční výsledek s jasnými čísly, co se zlepšilo, kolik zákazníků přibylo
-                    a kolik hodin ušetřila automatizace.
+                    Grafický design mě naučil přemýšlet o lidech a jejich potřebách.
+                    IT kariéra mi ukázala, jak věci fungují pod povrchem. A práce
+                    s malými firmami mi dala smysl. Každý projekt je přímá spolupráce,
+                    kde každý výsledek má okamžitý dopad.
                   </p>
                   <div className="about-card-tags-row">
                     <span className="about-card-pill">Weby na míru</span>
@@ -82,15 +92,16 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Card 2: Speed & AI-Ready */}
+              {/* Card 2: The name & mission */}
               <div className="about-card glow-card">
                 <div className="about-card-inner">
-                  <div className="about-card-tag">Rychlý web, viditelný všude</div>
-                  <h3 className="about-card-title">Google vás najde. ChatGPT vás zmíní.</h3>
+                  <div className="about-card-tag">Proč AImplementace</div>
+                  <h3 className="about-card-title">A implementace. AI implementace. Obojí.</h3>
                   <p className="about-card-text">
-                    Weby stavím tak, aby se načetly rychle a Google je miloval. Navíc vás
-                    mohou zmínit i ChatGPT nebo Perplexity, kde dnes lidé stále
-                    častěji hledají firmy a služby.
+                    Název si každý přečte trochu jinak a to je záměr. Jak kdysi
+                    internet smazal zlaté stránky, tak dnes AI mění pravidla pro
+                    každý byznys. Weby, které jsou pomalé nebo na AI nepřipravené,
+                    přicházejí o zákazníky. Pomáhám firmám, aby to nebyl jejich problém.
                   </p>
                   <div className="about-card-tags-row">
                     <span className="about-card-pill">Rychlé načtení</span>
@@ -100,14 +111,16 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Card 3: 1-on-1 Partnership */}
+              {/* Card 3: Direct partnership */}
               <div className="about-card glow-card">
                 <div className="about-card-inner">
-                  <div className="about-card-tag">Spolupráce 1-na-1</div>
-                  <h3 className="about-card-title">Přímá linka bez prostředníků</h3>
+                  <div className="about-card-tag">Spolupráce 1 na 1</div>
+                  <h3 className="about-card-title">Přímá linka bez agentury</h3>
                   <p className="about-card-text">
-                    Pracujete přímo se mnou, ne s týmem prostředníků. Odpovím
-                    do 24 hodin a ke každému projektu přistupuji, jako by byl můj vlastní.
+                    Komunikujete přímo se mnou, ne s týmem prostředníků. Web,
+                    reklamy nebo automatizace, vždy s přesnou cenou předem.
+                    Průměrně ušetříme 6 až 10 hodin práce týdně a zákazníky
+                    z webu znásobíme. Napište mi na e-mail nebo WhatsApp.
                   </p>
                   <div className="about-card-tags-row">
                     <span className="about-card-pill">Od 15 000 Kč</span>
@@ -126,7 +139,7 @@ const About = () => {
               </div>
               <div className="about-sig-info">
                 <div className="about-sig-name">Lukáš Červenka</div>
-                <div className="about-sig-role">Zakladatel · AImplementace.cz · Praha</div>
+                <div className="about-sig-role">Zakladatel, AImplementace.cz, Praha</div>
               </div>
               <a
                 href="https://www.linkedin.com/in/luk%C3%A1%C5%A1-%C4%8Dervenka-86b34399/"
