@@ -6,7 +6,9 @@ const Hero = () => {
   useEffect(() => {
     // ── GSAP MOUNT ANIMATIONS ──
     const eyebrow = document.querySelector('.hero-eyebrow-inner');
-    const headlineLines = document.querySelectorAll('.headline-line-inner');
+    // Separate the gradient-accent line so it gets its own wow animation
+    const headlineLines = document.querySelectorAll('.headline-line-inner:not(.gradient-accent)');
+    const accentLine    = document.querySelector('.headline-line-inner.gradient-accent');
     const description = document.querySelector('.hero-description-inner');
     const actions = document.querySelector('.hero-actions');
     const stats = document.querySelectorAll('.stat-item');
@@ -17,20 +19,31 @@ const Hero = () => {
     const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.8 } });
 
     // Set initial GSAP states programmatically to prevent CSS flickering
-    gsap.set([eyebrow, headlineLines, description, actions, stats, mockupWindow, floatingCards, scrollLine], { opacity: 0 });
+    gsap.set([eyebrow, headlineLines, accentLine, description, actions, stats, mockupWindow, floatingCards, scrollLine], { opacity: 0 });
 
-    tl.fromTo(eyebrow, 
-      { y: '100%', opacity: 0 }, 
+    tl.fromTo(eyebrow,
+      { y: '100%', opacity: 0 },
       { y: '0%', opacity: 1, delay: 0.05 }
     )
-    .fromTo(headlineLines, 
-      { y: '110%', opacity: 0 }, 
-      { y: '0%', opacity: 1, stagger: 0.06 }, 
+    // Lines 1–2: standard masked slide-up reveal
+    .fromTo(headlineLines,
+      { y: '110%', opacity: 0 },
+      { y: '0%', opacity: 1, stagger: 0.06 },
       '-=0.65'
     )
-    .fromTo(description, 
-      { y: 20, opacity: 0 }, 
-      { y: 0, opacity: 1, duration: 0.7 }, 
+    // "automaticky." — blur-to-sharp materialise + kick off flowing gradient
+    .fromTo(accentLine,
+      { opacity: 0, scale: 0.86, filter: 'blur(22px)' },
+      {
+        opacity: 1, scale: 1, filter: 'blur(0px)',
+        duration: 1.15, ease: 'power3.out',
+        onStart() { accentLine.style.animationPlayState = 'running'; },
+      },
+      '-=0.12'
+    )
+    .fromTo(description,
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.7 },
       '-=0.6'
     )
     .fromTo(actions, 
@@ -80,7 +93,7 @@ const Hero = () => {
               <span className="headline-line-inner">VYDĚLÁVÁ</span>
             </span>
             <span className="headline-line">
-              <span className="headline-line-inner serif">automaticky.</span>
+              <span className="headline-line-inner gradient-accent">automaticky.</span>
             </span>
           </h1>
 

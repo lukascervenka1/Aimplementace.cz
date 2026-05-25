@@ -52,10 +52,8 @@
   margin-bottom: -0.06em;
 }
 .headline-line:last-child {
-  margin-top: -0.18em; /* Pull 'automaticky.' closer to VYDĚLÁVÁ */
-  padding-bottom: 0.28em; /* Give ample room for descenders of italic 'y' */
-  margin-bottom: -0.28em;
-  padding-right: 0.2em; /* Prevent clipping of italic slant at the end */
+  margin-top: -0.12em;
+  overflow: visible; /* Let the blur animation breathe beyond the line boundary */
 }
 .headline-line-inner {
   display: block;
@@ -69,14 +67,39 @@
   transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
 }
-.headline-line-inner.serif {
-  font-family: 'Instrument Serif', serif;
-  font-weight: 400;
-  font-style: italic;
-  letter-spacing: 0.01em; /* Avoid negative letter spacing for italic text */
-  color: var(--blue);
-  line-height: 0.95; /* Sits closer to the line above */
-  padding-right: 0.15em; /* Ensure the italic slant of 'y.' is not clipped */
+/* ── GRADIENT ACCENT LINE ("automaticky.") ── */
+.headline-line-inner.gradient-accent {
+  /* Same weight/font as other lines — no serif mixing */
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  line-height: 1.0;
+
+  /* Flowing gradient text fill */
+  background: linear-gradient(
+    90deg,
+    #06b6d4 0%,
+    #8b5cf6 38%,
+    #c084fc 60%,
+    #06b6d4 100%
+  );
+  background-size: 260% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  /* Gradient flows left→right→left in a loop — starts paused, GSAP kicks it off */
+  animation: hero-accent-flow 5s ease-in-out infinite;
+  animation-play-state: paused;
+
+  display: inline-block; /* required for background-clip + transform */
+}
+
+@keyframes hero-accent-flow {
+  0%   { background-position:   0% center; }
+  50%  { background-position: 100% center; }
+  100% { background-position:   0% center; }
 }
 .headline-line:nth-child(2) .headline-line-inner { transition-delay: 0.08s; }
 .headline-line:nth-child(3) .headline-line-inner { transition-delay: 0.16s; }
