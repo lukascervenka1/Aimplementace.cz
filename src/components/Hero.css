@@ -713,13 +713,13 @@ body.loaded .floating-card {
 
 @media (max-width: 768px) {
   #hero {
-    /* Natural height — no forced 100svh that creates blank space below CTA */
-    padding: 120px 24px 90px;
+    padding: 120px 24px 60px;
     min-height: auto;
   }
 
-  /* Hide the mockup widget — too small to be useful on phones */
-  .hero-visual {
+  /* Hide mockup and stats on phones — not useful at this size */
+  .hero-visual,
+  .hero-stats {
     display: none;
   }
 
@@ -738,16 +738,6 @@ body.loaded .floating-card {
 
   .hero-actions {
     margin-top: 40px;
-  }
-
-  .hero-stats {
-    flex-direction: row;
-    gap: 32px;
-    margin-top: 52px;
-  }
-
-  .hero-stats .stat-item {
-    text-align: center;
   }
 
   .scroll-line {
