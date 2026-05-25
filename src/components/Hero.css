@@ -52,7 +52,9 @@
   margin-bottom: -0.06em;
 }
 .headline-line:last-child {
-  margin-top: -0.12em;
+  margin-top: -0.14em;
+  padding-bottom: 0.22em;
+  margin-bottom: -0.22em;
   overflow: visible; /* Let the blur animation breathe beyond the line boundary */
 }
 .headline-line-inner {
@@ -93,7 +95,7 @@
   animation: hero-accent-flow 5s ease-in-out infinite;
   animation-play-state: paused;
 
-  display: inline-block; /* required for background-clip + transform */
+  display: block; /* keep block flow — background-clip works fine with block */
 }
 
 @keyframes hero-accent-flow {
