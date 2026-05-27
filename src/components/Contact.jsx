@@ -9,6 +9,7 @@ const Contact = () => {
     message: '',
   });
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
+  const [errorDetail, setErrorDetail] = useState('');
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -28,11 +29,16 @@ const Contact = () => {
 
       if (res.ok) {
         setStatus('success');
+        setErrorDetail('');
         setFormData({ name: '', email: '', company: '', message: '' });
       } else {
+        let detail = `HTTP ${res.status}`;
+        try { const j = await res.json(); detail += ': ' + (j.error || JSON.stringify(j)); } catch {}
+        setErrorDetail(detail);
         setStatus('error');
       }
-    } catch {
+    } catch (err) {
+      setErrorDetail(err.message || 'Network error');
       setStatus('error');
     }
   };
@@ -125,6 +131,11 @@ const Contact = () => {
                     <p className="contact-error">
                       Nepodařilo se odeslat zprávu. Zkuste to prosím znovu nebo napište přímo na{' '}
                       <a href="mailto:info@aimplementace.cz">info@aimplementace.cz</a>
+                      {errorDetail && (
+                        <span style={{ display: 'block', fontSize: '11px', opacity: 0.6, marginTop: '4px', fontFamily: 'monospace' }}>
+                          {errorDetail}
+                        </span>
+                      )}
                     </p>
                   )}
 
