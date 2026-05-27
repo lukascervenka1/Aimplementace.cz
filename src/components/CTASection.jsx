@@ -50,18 +50,29 @@ const scrambleTo = (el, target, duration = 0.72) =>
 const CTASection = () => {
   const mainRef   = useRef(null);
   const accentRef = useRef(null);
+  const h2Ref     = useRef(null);
   const idxRef    = useRef(0);
 
   useEffect(() => {
     let iv;
 
     const cycle = () => {
+      // Lock h2 height before scramble so layout below never shifts
+      if (h2Ref.current) {
+        h2Ref.current.style.height = h2Ref.current.offsetHeight + 'px';
+      }
+
       idxRef.current = (idxRef.current + 1) % phrases.length;
       const { main, accent } = phrases[idxRef.current];
 
       // Main line scrambles first; accent follows 180 ms later
       scrambleTo(mainRef.current, main, 0.72);
-      setTimeout(() => scrambleTo(accentRef.current, accent, 0.52), 180);
+      setTimeout(() => {
+        scrambleTo(accentRef.current, accent, 0.52).then(() => {
+          // Release height lock after both scrambles finish
+          if (h2Ref.current) h2Ref.current.style.height = '';
+        });
+      }, 180);
     };
 
     // Give the ScrollReveal entrance animation time to finish before first swap
@@ -83,8 +94,7 @@ const CTASection = () => {
       <div className="section-inner" style={{ position: 'relative', zIndex: 1 }}>
         <div className="cta-overline reveal">Připraveni začít?</div>
 
-        <h2 className="cta-h2 reveal reveal-delay-1">
-          {/* min-height prevents layout shifts when phrase lengths differ */}
+        <h2 ref={h2Ref} className="cta-h2 reveal reveal-delay-1">
           <span ref={mainRef} className="cta-main-line">
             {phrases[0].main}
           </span>

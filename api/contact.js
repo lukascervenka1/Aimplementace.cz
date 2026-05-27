@@ -20,7 +20,7 @@ export default async function handler(req, res) {
                 from: 'Web formulář <info@aimplementace.cz>',
                 to: ['info@aimplementace.cz'],
                 reply_to: email,
-                subject: `Poptávka — ${company || name}`,
+                subject: `Poptávka: ${company || name}`,
                 html: `
                     <h2>Nová poptávka z webu</h2>
                     <p><strong>Jméno:</strong> ${name}</p>
