@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Logo export — AImplementace.cz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;900&display=block" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, sans-serif; background: #f8f8f8; padding: 40px; }
+  h1 { font-size: 14px; font-weight: 600; color: #555; margin-bottom: 32px; letter-spacing: .05em; text-transform: uppercase; }
+  .row { display: flex; flex-direction: column; gap: 40px; }
+  .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 32px 40px; }
+  .card.dark-bg { background: #07080a; border-color: #222; }
+  .card h2 { font-size: 11px; color: #9ca3af; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 20px; }
+  .card.dark-bg h2 { color: #4b5563; }
+  .logo-wrap { display: flex; align-items: center; gap: 14px; }
+  .logo-wrap svg { flex-shrink: 0; }
+  .wordmark { font-family: 'Outfit', system-ui, sans-serif; font-size: 22px; letter-spacing: -0.03em; display: flex; align-items: center; }
+  .ai  { font-weight: 900; color: #8b5cf6; }
+  .rest { font-weight: 700; }
+  .dot  { font-weight: 700; }
+  /* light */
+  .light .rest { color: #07080a; }
+  .light .dot  { color: #9ca3af; }
+  /* dark */
+  .dark .rest  { color: #f5f7ff; }
+  .dark .dot   { color: #6b7280; }
+
+  .actions { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
+  button {
+    font-size: 12px; font-weight: 600; letter-spacing: .04em;
+    padding: 8px 16px; border-radius: 6px; border: none; cursor: pointer;
+    background: #8b5cf6; color: #fff; transition: opacity .15s;
+  }
+  button:hover { opacity: .85; }
+  button.secondary { background: #f3f4f6; color: #374151; }
+  canvas { display: none; }
+  #instructions {
+    margin-top: 40px; padding: 20px 24px;
+    background: #fffbeb; border: 1px solid #fcd34d; border-radius: 8px;
+    font-size: 13px; line-height: 1.7; color: #92400e;
+  }
+  #instructions strong { display: block; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+
+<h1>Logo export — AImplementace.cz</h1>
+
+<div class="row">
+
+  <!-- Light (invoice) -->
+  <div class="card" id="card-light">
+    <h2>Světlé pozadí — faktury, PDF, e-mail</h2>
+    <div class="logo-wrap" id="logo-light">
+      <svg viewBox="0 0 40 40" width="40" height="40">
+        <defs>
+          <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#06b6d4"/>
+            <stop offset="100%" stop-color="#8b5cf6"/>
+          </linearGradient>
+        </defs>
+        <path d="M20 4L34 12L34 28L20 36L6 28L6 12Z" stroke="url(#g1)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+        <path d="M6 28L20 4L34 28" stroke="url(#g1)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="13" y1="20" x2="27" y2="20" stroke="url(#g1)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="20" y1="4" x2="20" y2="36" stroke="url(#g1)" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="20" cy="4"  r="2.5" fill="#06b6d4"/>
+        <circle cx="6"  cy="28" r="2.5" fill="#8b5cf6"/>
+        <circle cx="34" cy="28" r="2.5" fill="#8b5cf6"/>
+        <circle cx="20" cy="36" r="2.5" fill="#06b6d4"/>
+        <circle cx="13" cy="20" r="2"   fill="#8b5cf6"/>
+        <circle cx="27" cy="20" r="2"   fill="#8b5cf6"/>
+        <circle cx="20" cy="20" r="2"   fill="#06b6d4"/>
+      </svg>
+      <div class="wordmark light">
+        <span class="ai">AI</span>
+        <span class="rest">mplementace</span>
+        <span class="dot">.cz</span>
+      </div>
+    </div>
+    <div class="actions">
+      <button onclick="exportPNG('logo-light','aimplementace-logo-light',240,false)">PNG 240 px (faktury)</button>
+      <button onclick="exportPNG('logo-light','aimplementace-logo-light-2x',480,false)" class="secondary">PNG 480 px (2×)</button>
+    </div>
+  </div>
+
+  <!-- Dark -->
+  <div class="card dark-bg" id="card-dark">
+    <h2>Tmavé pozadí — web, signatura</h2>
+    <div class="logo-wrap" id="logo-dark">
+      <svg viewBox="0 0 40 40" width="40" height="40">
+        <defs>
+          <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#06b6d4"/>
+            <stop offset="100%" stop-color="#8b5cf6"/>
+          </linearGradient>
+        </defs>
+        <path d="M20 4L34 12L34 28L20 36L6 28L6 12Z" stroke="url(#g2)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+        <path d="M6 28L20 4L34 28" stroke="url(#g2)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="13" y1="20" x2="27" y2="20" stroke="url(#g2)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="20" y1="4" x2="20" y2="36" stroke="url(#g2)" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="20" cy="4"  r="2.5" fill="#06b6d4"/>
+        <circle cx="6"  cy="28" r="2.5" fill="#8b5cf6"/>
+        <circle cx="34" cy="28" r="2.5" fill="#8b5cf6"/>
+        <circle cx="20" cy="36" r="2.5" fill="#06b6d4"/>
+        <circle cx="13" cy="20" r="2"   fill="#8b5cf6"/>
+        <circle cx="27" cy="20" r="2"   fill="#8b5cf6"/>
+        <circle cx="20" cy="20" r="2"   fill="#06b6d4"/>
+      </svg>
+      <div class="wordmark dark">
+        <span class="ai">AI</span>
+        <span class="rest">mplementace</span>
+        <span class="dot">.cz</span>
+      </div>
+    </div>
+    <div class="actions">
+      <button onclick="exportPNG('logo-dark','aimplementace-logo-dark',240,true)">PNG 240 px (tmavé)</button>
+      <button onclick="exportPNG('logo-dark','aimplementace-logo-dark-2x',480,true)" class="secondary">PNG 480 px (2×)</button>
+    </div>
+  </div>
+
+  <!-- Mark only -->
+  <div class="card" id="card-mark">
+    <h2>Samotný znak — avatar, favicon</h2>
+    <div id="logo-mark" style="display:inline-block">
+      <svg viewBox="0 0 40 40" width="48" height="48">
+        <defs>
+          <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#06b6d4"/>
+            <stop offset="100%" stop-color="#8b5cf6"/>
+          </linearGradient>
+        </defs>
+        <path d="M20 4L34 12L34 28L20 36L6 28L6 12Z" stroke="url(#g3)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+        <path d="M6 28L20 4L34 28" stroke="url(#g3)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="13" y1="20" x2="27" y2="20" stroke="url(#g3)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="20" y1="4" x2="20" y2="36" stroke="url(#g3)" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="20" cy="4"  r="2.5" fill="#06b6d4"/>
+        <circle cx="6"  cy="28" r="2.5" fill="#8b5cf6"/>
+        <circle cx="34" cy="28" r="2.5" fill="#8b5cf6"/>
+        <circle cx="20" cy="36" r="2.5" fill="#06b6d4"/>
+        <circle cx="13" cy="20" r="2"   fill="#8b5cf6"/>
+        <circle cx="27" cy="20" r="2"   fill="#8b5cf6"/>
+        <circle cx="20" cy="20" r="2"   fill="#06b6d4"/>
+      </svg>
+    </div>
+    <div class="actions">
+      <button onclick="exportMarkPNG('aimplementace-mark',240)">PNG 240 × 240 px</button>
+      <button onclick="exportMarkPNG('aimplementace-mark-512',512)" class="secondary">PNG 512 × 512 px</button>
+    </div>
+  </div>
+
+</div>
+
+<canvas id="cv"></canvas>
+
+<div id="instructions">
+  <strong>SVG soubory (pro fakturu / PDF):</strong>
+  Ve složce <code>/public/</code> najdeš: <code>logo.svg</code> (světlé), <code>logo-dark.svg</code> (tmavé), <code>logo-mark.svg</code> (jen znak).<br>
+  SVG nahraj přímo do fakturačního SW (Fakturoid, iDoklad) — bude ostrý v libovolném zoomu.<br><br>
+  <strong>PNG tlačítka výše:</strong>
+  Výška 240 px = retina kvalita při zobrazení 48 px. Stahuje se s průhledným pozadím.
+</div>
+
+<script>
+async function exportPNG(logoId, filename, targetHeight, darkBg) {
+  await document.fonts.ready;
+
+  const logoEl = document.getElementById(logoId);
+  const rect = logoEl.getBoundingClientRect();
+  const scale = targetHeight / rect.height;
+  const w = Math.round(rect.width * scale);
+  const h = targetHeight;
+
+  const cv = document.getElementById('cv');
+  cv.width = w; cv.height = h;
+  const ctx = cv.getContext('2d');
+  ctx.clearRect(0, 0, w, h);
+
+  if (darkBg) {
+    ctx.fillStyle = '#07080a';
+    ctx.fillRect(0, 0, w, h);
+  }
+
+  // Serialize the element to SVG string via foreignObject
+  const svgEl = logoEl.querySelector('svg');
+  const textEl = logoEl.querySelector('.wordmark');
+
+  // Build a standalone SVG that includes text as native SVG text
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const standalone = document.createElementNS(svgNS, 'svg');
+  const markW = 40 * scale;
+  const markH = 40 * scale;
+  const gap = 14 * scale;
+  const fontSize = 22 * scale;
+
+  const aiColor = '#8b5cf6';
+  const restColor = darkBg ? '#f5f7ff' : '#07080a';
+  const dotColor  = darkBg ? '#6b7280' : '#9ca3af';
+
+  standalone.setAttribute('xmlns', svgNS);
+  standalone.setAttribute('width', w);
+  standalone.setAttribute('height', h);
+  standalone.setAttribute('viewBox', `0 0 ${w} ${h}`);
+
+  const bg = darkBg ? `<rect width="${w}" height="${h}" fill="#07080a"/>` : '';
+
+  const gradId = 'expg';
+  const innerSVG = `
+    ${bg}
+    <defs>
+      <linearGradient id="${gradId}" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#06b6d4"/>
+        <stop offset="100%" stop-color="#8b5cf6"/>
+      </linearGradient>
+    </defs>
+    <g transform="scale(${scale})">
+      <path d="M20 4L34 12L34 28L20 36L6 28L6 12Z" stroke="url(#${gradId})" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+      <path d="M6 28L20 4L34 28" stroke="url(#${gradId})" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="13" y1="20" x2="27" y2="20" stroke="url(#${gradId})" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="20" y1="4" x2="20" y2="36" stroke="url(#${gradId})" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="20" cy="4"  r="2.5" fill="#06b6d4"/>
+      <circle cx="6"  cy="28" r="2.5" fill="#8b5cf6"/>
+      <circle cx="34" cy="28" r="2.5" fill="#8b5cf6"/>
+      <circle cx="20" cy="36" r="2.5" fill="#06b6d4"/>
+      <circle cx="13" cy="20" r="2"   fill="#8b5cf6"/>
+      <circle cx="27" cy="20" r="2"   fill="#8b5cf6"/>
+      <circle cx="20" cy="20" r="2"   fill="#06b6d4"/>
+    </g>
+    <text x="${markW + gap}" y="${h * 0.72}"
+          font-family="'Outfit', 'Inter', system-ui, sans-serif"
+          font-size="${fontSize}" letter-spacing="${-0.03 * fontSize}">
+      <tspan fill="${aiColor}" font-weight="900">AI</tspan><tspan fill="${restColor}" font-weight="700">mplementace</tspan><tspan fill="${dotColor}" font-weight="700">.cz</tspan>
+    </text>
+  `;
+
+  const blob = new Blob(
+    [`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}">${innerSVG}</svg>`],
+    { type: 'image/svg+xml' }
+  );
+  const url = URL.createObjectURL(blob);
+  const img = new Image();
+  img.onload = () => {
+    ctx.clearRect(0, 0, w, h);
+    ctx.drawImage(img, 0, 0, w, h);
+    URL.revokeObjectURL(url);
+    download(cv, filename);
+  };
+  img.src = url;
+}
+
+function exportMarkPNG(filename, size) {
+  const gradId = 'mpg';
+  const s = size / 40;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}">
+    <defs>
+      <linearGradient id="${gradId}" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#06b6d4"/>
+        <stop offset="100%" stop-color="#8b5cf6"/>
+      </linearGradient>
+    </defs>
+    <g transform="scale(${s})">
+      <path d="M20 4L34 12L34 28L20 36L6 28L6 12Z" stroke="url(#${gradId})" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+      <path d="M6 28L20 4L34 28" stroke="url(#${gradId})" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="13" y1="20" x2="27" y2="20" stroke="url(#${gradId})" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="20" y1="4" x2="20" y2="36" stroke="url(#${gradId})" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="20" cy="4"  r="2.5" fill="#06b6d4"/>
+      <circle cx="6"  cy="28" r="2.5" fill="#8b5cf6"/>
+      <circle cx="34" cy="28" r="2.5" fill="#8b5cf6"/>
+      <circle cx="20" cy="36" r="2.5" fill="#06b6d4"/>
+      <circle cx="13" cy="20" r="2"   fill="#8b5cf6"/>
+      <circle cx="27" cy="20" r="2"   fill="#8b5cf6"/>
+      <circle cx="20" cy="20" r="2"   fill="#06b6d4"/>
+    </g>
+  </svg>`;
+  const blob = new Blob([svg], { type: 'image/svg+xml' });
+  const url = URL.createObjectURL(blob);
+  const img = new Image();
+  const cv = document.getElementById('cv');
+  img.onload = () => {
+    cv.width = size; cv.height = size;
+    const ctx = cv.getContext('2d');
+    ctx.clearRect(0, 0, size, size);
+    ctx.drawImage(img, 0, 0);
+    URL.revokeObjectURL(url);
+    download(cv, filename);
+  };
+  img.src = url;
+}
+
+function download(canvas, name) {
+  const a = document.createElement('a');
+  a.download = name + '.png';
+  a.href = canvas.toDataURL('image/png');
+  a.click();
+}
+</script>
+</body>
+</html>
