@@ -4,6 +4,7 @@
   inset: 0;
   pointer-events: none;
   z-index: 0;
+  will-change: opacity; /* own compositor layer — opacity anim without repaints */
   animation: grid-breathe 8s ease-in-out infinite;
 }
 @keyframes grid-breathe {
@@ -21,32 +22,35 @@
   50%       { opacity: 0.3;  transform: scale(1.2) translate(-40px, 30px); }
 }
 
-/* ── GLOW ORBS (Premium Soft Atmospheric Glows) ── */
+/* ── GLOW ORBS (Premium Soft Atmospheric Glows) ──
+   filter: blur() removed — the soft falloff is baked into the gradients.
+   Blurring huge, endlessly animated layers forced the GPU to re-blur every
+   frame (main jank source) and the blur spread got hard-clipped by
+   overflow boundaries, drawing faint page edges. */
 .glow-orb {
   position: fixed;
   pointer-events: none;
   z-index: 0;
   border-radius: 50%;
-  filter: blur(150px);
   will-change: transform, opacity;
 }
 .glow-orb-1 {
   width: 800px; height: 800px;
   top: -300px; left: -250px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, rgba(139, 92, 246, 0.035) 40%, transparent 68%);
   animation: pulse-primary 10s ease-in-out infinite;
 }
 .glow-orb-2 {
   width: 600px; height: 600px;
   bottom: 10%; right: -200px;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.06) 0%, rgba(6, 182, 212, 0.025) 40%, transparent 68%);
   animation: pulse-secondary 12s ease-in-out infinite 2s;
 }
 .glow-orb-3 {
   width: 500px; height: 400px;
   bottom: -100px; left: 30%;
   transform: translateX(-50%);
-  background: radial-gradient(ellipse, rgba(139, 92, 246, 0.04) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(139, 92, 246, 0.04) 0%, transparent 68%);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -82,11 +86,11 @@
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(139, 92, 246, 0.15) 0%,
-    rgba(6, 182, 212, 0.08) 30%,
-    rgba(139, 92, 246, 0.02) 60%,
-    transparent 80%
+    480px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(139, 92, 246, 0.14) 0%,
+    rgba(6, 182, 212, 0.07) 28%,
+    rgba(139, 92, 246, 0.02) 50%,
+    transparent 68%
   );
   pointer-events: none;
   z-index: 0;
@@ -97,26 +101,27 @@
   opacity: 1;
 }
 
-/* Floating background glow orbs */
+/* Floating background glow orbs — kept fully inside the section.
+   Negative offsets + blur() used to get hard-clipped by overflow:hidden,
+   drawing a visible rectangle around the section edges. */
 .cta-glow-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(120px);
   pointer-events: none;
   z-index: 0;
-  opacity: 0.35;
+  opacity: 0.5;
   will-change: transform;
 }
 .cta-glow-orb-1 {
-  width: 320px; height: 320px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.14) 0%, transparent 70%);
-  top: -40px; left: 15%;
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.11) 0%, rgba(139, 92, 246, 0.04) 40%, transparent 66%);
+  top: 30px; left: 15%;
   animation: cta-float-1 16s ease-in-out infinite alternate;
 }
 .cta-glow-orb-2 {
-  width: 380px; height: 380px;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.09) 0%, transparent 70%);
-  bottom: -80px; right: 18%;
+  width: 460px; height: 460px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.07) 0%, rgba(6, 182, 212, 0.03) 40%, transparent 66%);
+  bottom: 20px; right: 18%;
   animation: cta-float-2 20s ease-in-out infinite alternate;
 }
 @keyframes cta-float-1 {

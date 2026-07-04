@@ -23,6 +23,7 @@ const InteractiveBackground = () => {
         if (!canvas) return;
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
+        if (!running) draw(); // resizing clears the canvas — repaint static grid once (loop repaints itself)
       }, 150);
     };
     window.addEventListener('resize', handleResize, { passive: true });
@@ -43,7 +44,11 @@ const InteractiveBackground = () => {
     
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
     window.addEventListener('mouseleave', handleMouseLeave, { passive: true });
-    
+
+    // Render loop runs ONLY while the mouse is active — a static grid does
+    // not need 60fps redraws. `running` guards against double loops.
+    let running = false;
+
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
       
@@ -109,12 +114,33 @@ const InteractiveBackground = () => {
         ctx.fill();
       }
       
-      animationFrameId = requestAnimationFrame(draw);
+      // Keep animating only while there is something to animate:
+      // an active cursor, or the eased position still settling toward it.
+      const settling =
+        mouse.targetX !== null &&
+        (Math.abs(mouse.targetX - mouse.x) > 0.3 || Math.abs(mouse.targetY - mouse.y) > 0.3);
+
+      if (mouse.targetX !== null || settling) {
+        animationFrameId = requestAnimationFrame(draw);
+      } else {
+        running = false; // grid is static — stop burning frames
+      }
     };
-    
+
+    const startLoop = () => {
+      if (!running) {
+        running = true;
+        animationFrameId = requestAnimationFrame(draw);
+      }
+    };
+
+    // Wake the loop on interaction; draw one static frame immediately so
+    // the grid is visible before the first mouse move.
+    window.addEventListener('mousemove', startLoop, { passive: true });
     draw();
-    
+
     return () => {
+      window.removeEventListener('mousemove', startLoop);
       clearTimeout(resizeTimer);
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);

@@ -65,6 +65,10 @@ const About = () => {
               <img
                 src="/luke.jpeg"
                 alt="Lukáš Červenka, zakladatel AImplementace.cz"
+                width="660"
+                height="768"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

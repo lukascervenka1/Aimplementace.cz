@@ -63,17 +63,29 @@ function App() {
     const glowCards = Array.from(document.querySelectorAll('.glow-card'));
     const ctaSection = document.getElementById('cta-final');
 
-    const handleGlowMove = (e) => {
+    // rAF-throttled: mousemove can fire far above 60 Hz — writing CSS vars
+    // (style recalc on every card) more than once per frame is wasted work.
+    let glowRaf = 0;
+    let lastX = 0, lastY = 0;
+
+    const applyGlow = () => {
+      glowRaf = 0;
       glowCards.forEach(card => {
         const rect = card.getBoundingClientRect();
-        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+        card.style.setProperty('--mouse-x', `${lastX - rect.left}px`);
+        card.style.setProperty('--mouse-y', `${lastY - rect.top}px`);
       });
       if (ctaSection) {
         const rect = ctaSection.getBoundingClientRect();
-        ctaSection.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-        ctaSection.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+        ctaSection.style.setProperty('--mouse-x', `${lastX - rect.left}px`);
+        ctaSection.style.setProperty('--mouse-y', `${lastY - rect.top}px`);
       }
+    };
+
+    const handleGlowMove = (e) => {
+      lastX = e.clientX;
+      lastY = e.clientY;
+      if (!glowRaf) glowRaf = requestAnimationFrame(applyGlow);
     };
 
     window.addEventListener('mousemove', handleGlowMove, { passive: true });
@@ -85,6 +97,7 @@ function App() {
         if (el._magneticLeave) el.removeEventListener('mouseleave', el._magneticLeave);
       });
       window.removeEventListener('mousemove', handleGlowMove);
+      if (glowRaf) cancelAnimationFrame(glowRaf);
     };
   }, []);
 
