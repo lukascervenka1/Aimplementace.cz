@@ -2,59 +2,46 @@
 // JavaScript (GPTBot, ClaudeBot, PerplexityBot, and Googlebot's first pass)
 // see the full page text instead of an empty <div id="root">.
 //
-// Runs after `vite build`: serves dist/ locally, opens it in headless
-// Chromium, waits for React + GSAP to settle, scrolls through the page so
-// ScrollReveal's IntersectionObserver-triggered sections render too, then
-// captures the final DOM and overwrites dist/index.html — keeping the
-// original <script type="module"> tag so React hydrates on top of it.
+// Uses React's own server renderer (ReactDOMServer.renderToString) — no
+// headless browser involved, so there's no native Chromium binary that can
+// break in a locked-down container (this replaced an earlier Playwright-based
+// version that failed on Vercel's build image with a missing libnspr4.so).
+//
+// Runs after both builds:
+//   1. `vite build`               → dist/            (client bundle)
+//   2. `vite build --ssr ...`     → dist-ssr/         (Node-runnable server bundle)
+// This script renders the SSR bundle to an HTML string and splices it into
+// dist/index.html in place of the empty root div, keeping the original
+// <script type="module"> tag so React hydrates on top of it in the browser.
 
-import { chromium } from 'playwright-chromium';
-import { preview } from 'vite';
-import { writeFile } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
+import { readFile, writeFile, rm } from 'node:fs/promises';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import path from 'node:path';
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 
 async function main() {
-  // Serves the already-built dist/ folder (production bundle, hashed asset
-  // filenames) — NOT the dev server, which would prerender the wrong markup.
-  const previewServer = await preview({
-    root,
-    preview: { port: 4173, strictPort: true },
-  });
-  const url = `http://localhost:4173/`;
+  const ssrEntry = path.join(root, 'dist-ssr', 'entry-server.js');
+  const { render } = await import(pathToFileURL(ssrEntry).href);
 
-  // --no-sandbox is required in containerized CI environments (Vercel's
-  // build runs as root in a container where Chromium's sandbox can't init).
-  const browser = await chromium.launch({ args: ['--no-sandbox'] });
-  const page = await browser.newPage();
+  const appHtml = render();
 
-  await page.goto(url, { waitUntil: 'networkidle' });
+  const templatePath = path.join(root, 'dist', 'index.html');
+  const template = await readFile(templatePath, 'utf-8');
 
-  // Let the Hero GSAP timeline + entrance transitions finish.
-  await page.waitForTimeout(2000);
+  if (!template.includes('<div id="root"></div>')) {
+    throw new Error('Could not find <div id="root"></div> in dist/index.html — template shape changed?');
+  }
 
-  // Scroll the full page in steps so every ScrollReveal section
-  // (IntersectionObserver-based) has a chance to fire before we snapshot.
-  await page.evaluate(async () => {
-    const step = 600;
-    const height = document.body.scrollHeight;
-    for (let y = 0; y < height; y += step) {
-      window.scrollTo(0, y);
-      await new Promise((r) => setTimeout(r, 120));
-    }
-    window.scrollTo(0, 0);
-  });
-  await page.waitForTimeout(500);
+  const finalHtml = template.replace(
+    '<div id="root"></div>',
+    `<div id="root">${appHtml}</div>`
+  );
 
-  const html = await page.content();
+  await writeFile(templatePath, finalHtml, 'utf-8');
 
-  await browser.close();
-  await previewServer.close();
-
-  const distIndex = path.join(root, 'dist', 'index.html');
-  await writeFile(distIndex, `<!DOCTYPE html>\n${html}`, 'utf-8');
+  // Intermediate SSR build artifact — not needed once inlined above.
+  await rm(path.join(root, 'dist-ssr'), { recursive: true, force: true });
 
   console.log('Prerendered dist/index.html with full page content.');
 }
