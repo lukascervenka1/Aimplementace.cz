@@ -63,7 +63,12 @@
   font-weight: 900;
   font-size: clamp(56px, 8.2vw, 110px); /* Slightly optimized size for split screen */
   line-height: 1.12; /* Increase to prevent diacritic/comma overlaps */
-  letter-spacing: -0.01em; /* Slightly wider to prevent letters from being too glued together */
+  letter-spacing: -0.005em; /* uniform tracking across all lines */
+  /* Disable per-pair kerning + contextual alternates so every letter uses the
+     same advance width — the font's kern table pulled pairs like VY/LÁ/VÁ
+     tighter than others, which read as uneven spacing at display size. */
+  font-kerning: none;
+  font-feature-settings: "liga" 0, "calt" 0;
   color: var(--white);
   transform: translateY(110%);
   transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
@@ -75,7 +80,7 @@
   font-family: 'Outfit', sans-serif;
   font-weight: 900;
   font-style: normal;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.005em; /* match the other lines for consistent tracking */
   line-height: 1.0;
 
   /* Override the base translateY(110%) — GSAP handles this line separately */
