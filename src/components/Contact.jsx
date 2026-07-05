@@ -64,6 +64,10 @@ const Contact = () => {
                   <span className="contact-detail-label">LOKALITA</span>
                   <span className="contact-detail-value">Praha / Online celá ČR</span>
                 </div>
+                <div className="contact-detail-item">
+                  <span className="contact-detail-label">IČO</span>
+                  <span className="contact-detail-value">29521742</span>
+                </div>
               </div>
             </div>
 

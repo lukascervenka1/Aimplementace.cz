@@ -144,7 +144,7 @@ function App() {
             <LogoMark size={22} />
             <div className="footer-brand-text">
               <span className="footer-brand-name">AImplementace.cz</span>
-              <span className="footer-copy">© 2026 · Lukáš Červenka · Praha</span>
+              <span className="footer-copy">© 2026 · Lukáš Červenka · Praha · IČO 29521742</span>
             </div>
           </div>
           <div className="footer-links">
