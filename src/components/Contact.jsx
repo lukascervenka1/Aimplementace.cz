@@ -144,6 +144,12 @@ const Contact = () => {
                       </svg>
                     )}
                   </button>
+
+                  <p className="contact-privacy-note">
+                    Odesláním formuláře souhlasíte se zpracováním osobních údajů za účelem
+                    vyřízení vaší poptávky. Více v{' '}
+                    <a href="/ochrana-osobnich-udaju.html">Zásadách ochrany osobních údajů</a>.
+                  </p>
                 </form>
               )}
             </div>

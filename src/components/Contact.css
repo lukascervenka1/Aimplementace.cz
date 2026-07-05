@@ -143,6 +143,21 @@ a.contact-detail-value:hover { color: var(--blue); }
 .contact-btn-primary:hover:not(:disabled) { opacity: 0.88; transform: translateY(-1px); }
 .contact-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
 
+/* GDPR / privacy note under the form */
+.contact-privacy-note {
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.contact-privacy-note a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+.contact-privacy-note a:hover { color: var(--white); }
+
 /* Success state */
 .contact-success {
   display: flex;

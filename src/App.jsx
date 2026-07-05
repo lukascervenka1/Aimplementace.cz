@@ -148,8 +148,7 @@ function App() {
             </div>
           </div>
           <div className="footer-links">
-            <a href="#">Ochrana osobních údajů</a>
-            <a href="#">Obchodní podmínky</a>
+            <a href="/ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>
             <a href="mailto:info@aimplementace.cz">info@aimplementace.cz</a>
           </div>
         </div>
