@@ -31,6 +31,13 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--bg);
+  /* Contain any horizontal overflow at the root. Without this, a few px of
+     overflow from a section widens the layout viewport on mobile, and the
+     position:fixed navbar anchors to that wider width — pushing the CTA
+     button just off the right edge until a scroll forces a reflow.
+     `clip` (not `hidden`) avoids creating a scroll container, so the
+     sticky About column keeps working. */
+  overflow-x: clip;
 }
 
 body {
@@ -39,7 +46,7 @@ body {
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
