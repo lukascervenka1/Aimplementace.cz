@@ -1,18 +1,18 @@
 /* ── ABOUT / STORY ── */
 #about {
-  padding: 80px 0;
+  padding: 52px 0;
 }
 
 .about-layout {
   display: grid;
   grid-template-columns: 4.2fr 5.8fr;
-  gap: clamp(40px, 6vw, 100px);
-  align-items: start;
+  gap: clamp(36px, 5vw, 88px);
+  align-items: center; /* balance the two columns vertically */
 }
 
 .about-left {
   position: sticky;
-  top: 120px;
+  top: 100px;
 }
 
 .about-overline {
@@ -35,11 +35,11 @@
 .about-statement {
   font-family: 'Outfit', sans-serif;
   font-weight: 900;
-  font-size: clamp(36px, 4vw, 60px);
+  font-size: clamp(32px, 3.4vw, 50px);
   letter-spacing: -0.04em;
-  line-height: 0.95;
+  line-height: 0.98;
   color: var(--white);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 .about-statement .about-accent {
   display: block;
@@ -54,14 +54,14 @@
   font-size: 14px;
   font-weight: 300;
   color: var(--muted);
-  line-height: 1.75;
-  max-width: 360px;
-  margin-bottom: 28px;
+  line-height: 1.6;
+  max-width: 380px;
+  margin-bottom: 24px;
 }
 
 .about-photo {
   width: 100%;
-  max-width: 320px;
+  max-width: 260px;
   aspect-ratio: 864/1006;
   background: var(--subtle);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -153,14 +153,14 @@
 
 /* Right column */
 .about-right {
-  padding-top: 8px;
+  padding-top: 0;
 }
 
 .about-cards-stack {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
 .about-card {
@@ -169,7 +169,7 @@
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 16px;
-  padding: 20px 24px;
+  padding: 16px 22px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -246,25 +246,25 @@
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--blue);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .about-card-title {
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 19px;
   letter-spacing: -0.02em;
   color: var(--white);
   margin-bottom: 6px;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 .about-card-text {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 300;
   color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 10px;
+  line-height: 1.55;
+  margin-bottom: 12px;
 }
 
 .about-card-tags-row {
@@ -289,8 +289,8 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-top: 24px;
-  padding-top: 20px;
+  margin-top: 16px;
+  padding-top: 16px;
   border-top: 1px solid var(--border);
 }
 

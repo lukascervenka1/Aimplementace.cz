@@ -53,12 +53,10 @@ const About = () => {
             </h2>
 
             <p className="about-bio">
-              Vystudoval jsem grafický design, ale ten mě brzy zavedl k webu
-              a web do světa IT. V kariéře jsem prošel různými rolemi ve
-              velkých korporacích i v malých firmách, od vývojáře přes správce
-              systémů až po architekta firemních procesů. Nakonec mi přišlo
-              zbytečné pracovat pro velké firmy, když ty malé potřebují pomoct
-              víc a výsledky jsou vidět rychleji.
+              Vystudoval jsem grafický design, který mě zavedl k webu a do světa
+              IT. Prošel jsem korporacemi i malými firmami — od vývojáře po
+              architekta firemních procesů. Nakonec mi dalo smysl pomáhat malým
+              firmám, kde jsou výsledky vidět rychleji.
             </p>
 
             <div className="about-photo glow-card">
@@ -83,10 +81,9 @@ const About = () => {
                   <div className="about-card-tag">Jak to začalo</div>
                   <h3 className="about-card-title">Design, korporace a vlastní cesta</h3>
                   <p className="about-card-text">
-                    Grafický design mě naučil přemýšlet o lidech a jejich potřebách.
-                    IT kariéra mi ukázala, jak věci fungují pod povrchem. A práce
-                    s malými firmami mi dala smysl. Každý projekt je přímá spolupráce,
-                    kde každý výsledek má okamžitý dopad.
+                    Grafický design mě naučil myslet na lidi, IT kariéra mi ukázala,
+                    jak věci fungují pod povrchem. U malých firem má každý výsledek
+                    okamžitý dopad.
                   </p>
                   <div className="about-card-tags-row">
                     <span className="about-card-pill">Weby na míru</span>
@@ -102,10 +99,9 @@ const About = () => {
                   <div className="about-card-tag">Proč AImplementace</div>
                   <h3 className="about-card-title">A implementace. AI implementace. Obojí.</h3>
                   <p className="about-card-text">
-                    Název si každý přečte trochu jinak a to je záměr. Jak kdysi
-                    internet smazal zlaté stránky, tak dnes AI mění pravidla pro
-                    každý byznys. Weby, které jsou pomalé nebo na AI nepřipravené,
-                    přicházejí o zákazníky. Pomáhám firmám, aby to nebyl jejich problém.
+                    Název si každý přečte jinak — a to je záměr. Jako kdysi internet
+                    smazal zlaté stránky, dnes AI mění pravidla. Pomáhám firmám, aby
+                    na to byly připravené.
                   </p>
                   <div className="about-card-tags-row">
                     <span className="about-card-pill">Rychlé načtení</span>
@@ -121,10 +117,9 @@ const About = () => {
                   <div className="about-card-tag">Spolupráce 1 na 1</div>
                   <h3 className="about-card-title">Přímá linka bez agentury</h3>
                   <p className="about-card-text">
-                    Komunikujete přímo se mnou, ne s týmem prostředníků. Web,
-                    reklamy nebo automatizace, vždy s přesnou cenou předem.
-                    Průměrně ušetříme 6 až 10 hodin práce týdně a zákazníky
-                    z webu znásobíme. Napište mi na e-mail nebo WhatsApp.
+                    Komunikujete přímo se mnou, ne s týmem prostředníků. Vždy
+                    s přesnou cenou předem. Průměrně ušetříme 6–10 hodin práce
+                    týdně.
                   </p>
                   <div className="about-card-tags-row">
                     <span className="about-card-pill">Od 15 000 Kč</span>
