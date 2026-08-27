@@ -14,12 +14,15 @@
   <meta name="geo.region" content="CZ-PR" />
   <meta name="geo.placename" content="Praha" />
 
-  <!-- Google Fonts — non-render-blocking -->
+  <!-- Google Fonts. Loaded as a plain stylesheet (not the old
+       preload+onload="this.media='all'" trick) so the page needs no inline
+       script — that keeps the Content-Security-Policy free of
+       'unsafe-inline' for script-src. All families already carry
+       &display=swap, so text still paints in a fallback font immediately
+       instead of waiting on this request. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;900&family=Instrument+Serif:ital@1&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;900&family=Instrument+Serif:ital@1&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;900&family=Instrument+Serif:ital@1&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;900&family=Instrument+Serif:ital@1&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
