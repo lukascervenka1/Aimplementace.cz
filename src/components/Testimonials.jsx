@@ -58,7 +58,7 @@ const row2 = [
     avatarImg: '/pilire/assets/app-icon.png',
     name: 'pilire.eu',
     role: 'Prohlédnout Pilíře ↗',
-    link: '/pilire'
+    link: '/pilire/'
   },
   {
     type: 'cta',

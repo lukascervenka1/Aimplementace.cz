@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/pilire",
+      "destination": "/pilire/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
