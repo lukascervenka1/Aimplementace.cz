@@ -50,6 +50,17 @@ const row2 = [
     link: 'https://apps.apple.com/cz/app/slav%C3%ADme/id6761773077?l=cs'
   },
   {
+    type: 'project',
+    tag: 'Vlajková aplikace',
+    title: 'Pilíře',
+    desc: 'Úkoly a návyky s herní odměnou pro iPhone. Vlastní iOS aplikace — právě ve schvalování v App Store.',
+    tags: ['Swift', 'iOS', 'Herní odměna'],
+    avatarImg: '/pilire/assets/app-icon.png',
+    name: 'pilire.eu',
+    role: 'Prohlédnout Pilíře ↗',
+    link: '/pilire'
+  },
+  {
     type: 'cta',
     tag: 'Váš projekt',
     quote: '"Mohl byste to být vy."',
@@ -115,7 +126,20 @@ const Testimonials = () => {
               </div>
             </div>
             <div className="testimonial-meta">
-              <div className="testimonial-avatar">{item.avatar}</div>
+              <div className="testimonial-avatar">
+                {item.avatarImg ? (
+                  <img
+                    className="testimonial-avatar-img"
+                    src={item.avatarImg}
+                    alt=""
+                    width="36"
+                    height="36"
+                    loading="lazy"
+                  />
+                ) : (
+                  item.avatar
+                )}
+              </div>
               <div>
                 <div className="testimonial-name">{item.name}</div>
                 <div className="testimonial-role">
