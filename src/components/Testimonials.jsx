@@ -53,7 +53,7 @@ const row2 = [
     type: 'project',
     tag: 'Vlajková aplikace',
     title: 'Pilíře',
-    desc: 'Úkoly a návyky s herní odměnou pro iPhone. Vlastní iOS aplikace — právě ve schvalování v App Store.',
+    desc: 'Úkoly a návyky s herní odměnou pro iPhone. Vlastní iOS aplikace, zdarma ke stažení na App Store.',
     tags: ['Swift', 'iOS', 'Herní odměna'],
     avatarImg: '/pilire/assets/app-icon.png',
     name: 'pilire.eu',
